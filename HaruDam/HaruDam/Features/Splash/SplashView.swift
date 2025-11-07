@@ -98,7 +98,7 @@ struct SplashView: View {
                 Text("하루담")
                     .font(.system(size: 37))
                     .fontWeight(.semibold)
-                    .kerning(0.08 * 16) // 텍스트 자간 설정
+                    .kerning(0.09 * 16) // 텍스트 자간 설정
                     .foregroundColor(AppColor.textPrimary)
                     .shadow(color: AppColor.textPrimary.opacity(0.2), radius: 12, x: 0, y: 2)
                     .opacity(showTitle ? 1 : 0)
@@ -109,14 +109,14 @@ struct SplashView: View {
                 Text("작은 감정도, 하루담에.")
                     .font(.system(size: 14))
                     .fontWeight(.light)
-                    .kerning(0.15 * 16)
+                    .kerning(0.17 * 16)
                     .foregroundColor(AppColor.textSecondary)
                     .opacity(showSubtitle ? 1 : 0)
                     .animation(.timingCurve(0.42, 0, 0.58, 1, duration: 0.8)
                                 .delay(1.3), value: showSubtitle)
             }
             .frame(maxHeight: .infinity, alignment: .bottom)
-            .padding(.bottom, UIScreen.main.bounds.height * 0.25)
+            .padding(.bottom, UIScreen.main.bounds.height * 0.23)
         }
         .onAppear {
             // 텍스트 타이밍
