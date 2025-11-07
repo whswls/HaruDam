@@ -16,7 +16,7 @@ struct SplashView: View {
     var body: some View {
         ZStack {
             // 배경색
-            Color(hex: "#FFFDF9").ignoresSafeArea()
+            AppColor.background.ignoresSafeArea()
 
             // 리플 애니메이션 컨테이너 (400x400)
             ZStack {
@@ -24,13 +24,13 @@ struct SplashView: View {
                 RippleCircle(
                     size: 220,
                     gradient: RadialGradient(colors: [
-                        Color(hex: "#A7D8F0").opacity(0.70),
-                        Color(hex: "#B8E8E0").opacity(0.45),
-                        Color(hex: "#EAD3FF").opacity(0.25)
+                        AppColor.primary.opacity(0.70),
+                        AppColor.primary.opacity(0.45),
+                        AppColor.primary.opacity(0.25)
                     ], center: .center, startRadius: 0, endRadius: 100),
                     blur: 2,
-                    shadow1: (Color(hex: "#A7D8F0").opacity(0.5), 40),
-                    shadow2: (Color(hex: "#A7D8F0").opacity(0.3), 80),
+                    shadow1: (AppColor.primary.opacity(0.5), 40),
+                    shadow2: (AppColor.primary.opacity(0.3), 80),
                     scaleFrom: 0.6, scaleTo: 1.4, opacityFrom: 1, opacityTo: 0,
                     duration: 3, delay: 0, repeatCount: 1
                 )
@@ -38,13 +38,13 @@ struct SplashView: View {
                 RippleCircle(
                     size: 230,
                     gradient: RadialGradient(colors: [
-                        Color(hex: "#B8E8E0").opacity(0.60),
-                        Color(hex: "#A7D8F0").opacity(0.40),
-                        Color(hex: "#EAD3FF").opacity(0.20)
+                        AppColor.primary.opacity(0.60),
+                        AppColor.primary.opacity(0.40),
+                        AppColor.primary.opacity(0.20)
                     ], center: .center, startRadius: 0, endRadius: 100),
                     blur: 2,
-                    shadow1: (Color(hex: "#B8E8E0").opacity(0.4), 40),
-                    shadow2: (Color(hex: "#A7D8F0").opacity(0.3), 80),
+                    shadow1: (AppColor.primary.opacity(0.4), 40),
+                    shadow2: (AppColor.primary.opacity(0.3), 80),
                     scaleFrom: 0.6, scaleTo: 1.4, opacityFrom: 0.8, opacityTo: 0,
                     duration: 2, delay: 0.3, repeatCount: 1
                 )
@@ -52,13 +52,13 @@ struct SplashView: View {
                 RippleCircle(
                     size: 240,
                     gradient: RadialGradient(colors: [
-                        Color(hex: "#EAD3FF").opacity(0.50),
-                        Color(hex: "#A7D8F0").opacity(0.30),
-                        Color(hex: "#B8E8E0").opacity(0.15)
+                        AppColor.primary.opacity(0.50),
+                        AppColor.primary.opacity(0.30),
+                        AppColor.primary.opacity(0.15)
                     ], center: .center, startRadius: 0, endRadius: 100),
                     blur: 2,
-                    shadow1: (Color(hex: "#EAD3FF").opacity(0.4), 40),
-                    shadow2: (Color(hex: "#A7D8F0").opacity(0.3), 80),
+                    shadow1: (AppColor.primary.opacity(0.4), 40),
+                    shadow2: (AppColor.primary.opacity(0.3), 80),
                     scaleFrom: 0.6, scaleTo: 1.4, opacityFrom: 0.6, opacityTo: 0,
                     duration: 2, delay: 0.6, repeatCount: 1
                 )
@@ -68,9 +68,9 @@ struct SplashView: View {
                     .fill(
                         RadialGradient(
                             colors: [
-                                Color(hex: "#A7D8F0").opacity(0.95),
-                                Color(hex: "#B8E8E0").opacity(0.65),
-                                Color(hex: "#EAD3FF").opacity(0.35),
+                                AppColor.primary.opacity(0.95),
+                                AppColor.primary.opacity(0.65),
+                                AppColor.primary.opacity(0.35),
                                 .clear
                             ],
                             center: .center,
@@ -80,16 +80,16 @@ struct SplashView: View {
                     )
                     .frame(width: 60, height: 60)
                     .blur(radius: 3)
-                    .shadow(color: Color(hex: "#A7D8F0").opacity(0.7), radius: 30)
+                    .shadow(color: AppColor.primary.opacity(0.7), radius: 30)
 
                 // 중앙 코어
                 Circle()
                     .fill(
-                        RadialGradient(colors: [Color(hex: "#A7D8F0"), Color(hex: "#B8E8E0")],
+                        RadialGradient(colors: [AppColor.primary, AppColor.primary.opacity(0.8)],
                                        center: .center, startRadius: 0, endRadius: 20)
                     )
                     .frame(width: 20, height: 20)
-                    .shadow(color: Color(hex: "#A7D8F0").opacity(0.9), radius: 20)
+                    .shadow(color: AppColor.primary.opacity(0.9), radius: 20)
             }
             .frame(width: 400, height: 400)
             .offset(y: -30)
@@ -99,8 +99,8 @@ struct SplashView: View {
                     .font(.system(size: 37))
                     .fontWeight(.semibold)
                     .kerning(0.08 * 16) // 텍스트 자간 설정
-                    .foregroundColor(Color(hex: "#7B93A5"))
-                    .shadow(color: Color(hex: "#7B93A5").opacity(0.2), radius: 12, x: 0, y: 2)
+                    .foregroundColor(AppColor.textPrimary)
+                    .shadow(color: AppColor.textPrimary.opacity(0.2), radius: 12, x: 0, y: 2)
                     .opacity(showTitle ? 1 : 0)
                     .offset(y: showTitle ? 0 : 8)
                     .animation(.timingCurve(0.42, 0, 0.58, 1, duration: 0.8)
@@ -110,7 +110,7 @@ struct SplashView: View {
                     .font(.system(size: 14))
                     .fontWeight(.light)
                     .kerning(0.15 * 16)
-                    .foregroundColor(Color(hex: "#A7BCC9"))
+                    .foregroundColor(AppColor.textSecondary)
                     .opacity(showSubtitle ? 1 : 0)
                     .animation(.timingCurve(0.42, 0, 0.58, 1, duration: 0.8)
                                 .delay(1.3), value: showSubtitle)
