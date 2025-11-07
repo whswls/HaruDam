@@ -12,24 +12,24 @@ import SwiftUI
 /// 모든 색상은 Assets.xcassets의 Named Color 참조
 struct AppColor {
     // Brand
-    static let primary       = Color("Brand/Primary")
-    static let secondary     = Color("Brand/Secondary")
+    static let primary       = Color("BrandPrimary")
+    static let secondary     = Color("BrandSecondary")
     
     // Background
-    static let background    = Color("Background/Base")
-    static let surface       = Color("Background/Surface")
+    static let background    = Color("BackgroundBase")
+    static let surface       = Color("BackgroundSurface")
     
     // Text
-    static let textPrimary   = Color("Text/Primary")
-    static let textSecondary = Color("Text/Secondary")
+    static let textPrimary   = Color("TextPrimary")
+    static let textSecondary = Color("TextSecondary")
     
     // Accent
-    static let accentSuccess = Color("Accent/Success")
-    static let accentWarning = Color("Accent/Warning")
-    static let accentError   = Color("Accent/Error")
+    static let accentSuccess = Color("AccentSuccess")
+    static let accentWarning = Color("AccentWarning")
+    static let accentError   = Color("AccentError")
     
     // Gray
-    static let gray100       = Color("Gray/100")
-    static let gray200       = Color("Gray/200")
-    static let gray300       = Color("Gray/300")
+    static let gray100       = Color("Gray100")
+    static let gray200       = Color("Gray200")
+    static let gray300       = Color("Gray300")
 }
