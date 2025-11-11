@@ -6,20 +6,67 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8CC7A4622EC2FC5C00C6B504 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4612EC2FC5C00C6B504 /* Auth */; };
+		8CC7A4662EC2FC5C00C6B504 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4652EC2FC5C00C6B504 /* PostgREST */; };
+		8CC7A46A2EC2FC5C00C6B504 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4692EC2FC5C00C6B504 /* Storage */; };
+		8CC7A5E42EC3107200C6B504 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A5E32EC3107200C6B504 /* Supabase */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CC7A7642EC3305900C6B504 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CC7A1272EBB212600C6B504 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CC7A12E2EBB212600C6B504;
+			remoteInfo = HaruDam;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		8CC7A12F2EBB212600C6B504 /* HaruDam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruDam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaruDamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		8CC7A75B2EC313E600C6B504 /* Exceptions for "HaruDam" folder in "HaruDam" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8CC7A12E2EBB212600C6B504 /* HaruDam */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8CC7A1312EBB212600C6B504 /* HaruDam */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8CC7A75B2EC313E600C6B504 /* Exceptions for "HaruDam" folder in "HaruDam" target */,
+			);
 			path = HaruDam;
+			sourceTree = "<group>";
+		};
+		8CC7A7612EC3305900C6B504 /* HaruDamTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HaruDamTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8CC7A12C2EBB212600C6B504 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CC7A4662EC2FC5C00C6B504 /* PostgREST in Frameworks */,
+				8CC7A5E42EC3107200C6B504 /* Supabase in Frameworks */,
+				8CC7A4622EC2FC5C00C6B504 /* Auth in Frameworks */,
+				8CC7A46A2EC2FC5C00C6B504 /* Storage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CC7A75D2EC3305900C6B504 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				8CC7A1312EBB212600C6B504 /* HaruDam */,
+				8CC7A7612EC3305900C6B504 /* HaruDamTests */,
+				8CC7A5E22EC3107200C6B504 /* Frameworks */,
 				8CC7A1302EBB212600C6B504 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +90,16 @@
 			isa = PBXGroup;
 			children = (
 				8CC7A12F2EBB212600C6B504 /* HaruDam.app */,
+				8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8CC7A5E22EC3107200C6B504 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -65,10 +122,37 @@
 			);
 			name = HaruDam;
 			packageProductDependencies = (
+				8CC7A4612EC2FC5C00C6B504 /* Auth */,
+				8CC7A4652EC2FC5C00C6B504 /* PostgREST */,
+				8CC7A4692EC2FC5C00C6B504 /* Storage */,
+				8CC7A5E32EC3107200C6B504 /* Supabase */,
 			);
 			productName = HaruDam;
 			productReference = 8CC7A12F2EBB212600C6B504 /* HaruDam.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8CC7A75F2EC3305900C6B504 /* HaruDamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CC7A7662EC3305900C6B504 /* Build configuration list for PBXNativeTarget "HaruDamTests" */;
+			buildPhases = (
+				8CC7A75C2EC3305900C6B504 /* Sources */,
+				8CC7A75D2EC3305900C6B504 /* Frameworks */,
+				8CC7A75E2EC3305900C6B504 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CC7A7652EC3305900C6B504 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8CC7A7612EC3305900C6B504 /* HaruDamTests */,
+			);
+			name = HaruDamTests;
+			packageProductDependencies = (
+			);
+			productName = HaruDamTests;
+			productReference = 8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -83,6 +167,10 @@
 					8CC7A12E2EBB212600C6B504 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
+					8CC7A75F2EC3305900C6B504 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 8CC7A12E2EBB212600C6B504;
+					};
 				};
 			};
 			buildConfigurationList = 8CC7A12A2EBB212600C6B504 /* Build configuration list for PBXProject "HaruDam" */;
@@ -95,18 +183,29 @@
 			);
 			mainGroup = 8CC7A1262EBB212600C6B504;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8CC7A1302EBB212600C6B504 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8CC7A12E2EBB212600C6B504 /* HaruDam */,
+				8CC7A75F2EC3305900C6B504 /* HaruDamTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8CC7A12D2EBB212600C6B504 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CC7A75E2EC3305900C6B504 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -123,7 +222,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8CC7A75C2EC3305900C6B504 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CC7A7652EC3305900C6B504 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CC7A12E2EBB212600C6B504 /* HaruDam */;
+			targetProxy = 8CC7A7642EC3305900C6B504 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8CC7A1382EBB212700C6B504 /* Debug */ = {
@@ -249,6 +363,8 @@
 		};
 		8CC7A13B2EBB212700C6B504 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 8CC7A1312EBB212600C6B504 /* HaruDam */;
+			baseConfigurationReferenceRelativePath = Config/Debug.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -257,6 +373,8 @@
 				DEVELOPMENT_TEAM = CW5VMZLJAM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaruDam/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,6 +400,8 @@
 		};
 		8CC7A13C2EBB212700C6B504 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 8CC7A1312EBB212600C6B504 /* HaruDam */;
+			baseConfigurationReferenceRelativePath = Config/Release.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +410,8 @@
 				DEVELOPMENT_TEAM = CW5VMZLJAM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HaruDam/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -310,6 +432,50 @@
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CC7A7672EC3305900C6B504 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW5VMZLJAM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaruDam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaruDam";
+			};
+			name = Debug;
+		};
+		8CC7A7682EC3305900C6B504 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CW5VMZLJAM;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaruDam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaruDam";
 			};
 			name = Release;
 		};
@@ -334,7 +500,50 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8CC7A7662EC3305900C6B504 /* Build configuration list for PBXNativeTarget "HaruDamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CC7A7672EC3305900C6B504 /* Debug */,
+				8CC7A7682EC3305900C6B504 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8CC7A4612EC2FC5C00C6B504 /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		8CC7A4652EC2FC5C00C6B504 /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		8CC7A4692EC2FC5C00C6B504 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Storage;
+		};
+		8CC7A5E32EC3107200C6B504 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CC7A1272EBB212600C6B504 /* Project object */;
 }
