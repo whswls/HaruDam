@@ -12,6 +12,10 @@ final class SupabaseManager {
     static let shared = SupabaseManager()
     let client: SupabaseClient
 
+    // Test용 public
+    public let supabaseURL: URL
+    public let supabaseKey: String
+    
     private init() {
         guard
             let urlString = Bundle.main.object(forInfoDictionaryKey: "SUPABASE_URL") as? String,
