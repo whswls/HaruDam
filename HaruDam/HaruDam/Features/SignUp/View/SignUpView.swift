@@ -1,0 +1,79 @@
+//
+//  SignUpView.swift
+//  HaruDam
+//
+//  Created by 존진 on 11/12/25.
+//
+
+import SwiftUI
+
+struct SignUpView: View {
+
+    var body: some View {
+        ZStack {
+            // 배경
+            AppColor.background.ignoresSafeArea()
+
+            VStack {
+                // 상단 여백
+                Spacer().frame(height: 160)
+
+                // 로고 + 리플 애니메이션
+                RippleCircle(
+                    size: 40,
+                    gradient: RadialGradient(colors: [
+                        AppColor.primary.opacity(0.70),
+                        AppColor.primary.opacity(0.45),
+                        AppColor.primary.opacity(0.25)
+                    ], center: .center, startRadius: 0, endRadius: 100),
+                    blur: 2,
+                    shadow1: (AppColor.primary.opacity(0.5), 40),
+                    shadow2: (AppColor.primary.opacity(0.3), 80),
+                    scaleFrom: 1.0, scaleTo: 1.35, opacityFrom: 0.6, opacityTo: 0.0,
+                    duration: 3.0, delay: 0.3,
+                    repeatCount: Int.max
+                )
+                .padding(.bottom, 24)
+
+                Spacer().frame(height: 30)
+                // 헤드라인
+                VStack(spacing: 8) {
+                    Text("하루의 감정을,\n가볍게 기록하세요")
+                        .multilineTextAlignment(.center)
+                        .font(.title2.weight(.semibold))
+                        .foregroundStyle(AppColor.textPrimary)
+
+                    Text("소셜 계정으로 10초 만에 시작하기")
+                        .font(.subheadline)
+                        .foregroundStyle(AppColor.textSecondary)
+                }
+                .padding(.horizontal, 24)
+
+                Spacer()
+
+                // 소셜 로그인 버튼
+                VStack(spacing: 12) {
+                    // Apple
+                    Button{
+                    } label: {}
+                    
+                    // Google
+                    Button {
+                        
+                    } label: {}
+                    
+                    // Kakao
+                    Button {
+                    } label: {}
+                }
+                .padding(.horizontal, 24)
+
+                Spacer()
+            }
+        }
+    }
+}
+
+#Preview {
+    SignUpView()
+}
