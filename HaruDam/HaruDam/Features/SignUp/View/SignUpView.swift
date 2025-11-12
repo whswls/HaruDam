@@ -70,7 +70,42 @@ struct SignUpView: View {
                     // Google
                     Button {
                         
-                    } label: {}
+                    } label: {
+                        HStack(spacing: 4) {
+                            if colorScheme == .dark {
+                                Image("google_logo_circle_dark")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle().inset(by: 2))
+                                    .background(
+                                        Circle().fill(AppColor.googleFill)
+                                    )
+                            } else {
+                                Image("google_logo_circle")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle().inset(by: 2))
+                                    .background(
+                                        Circle().fill(AppColor.googleFill)
+                                    )
+                            }
+                            Text("Google로 로그인")
+                                .font(.custom("Roboto-Medium", size: 18))
+                                .foregroundColor(AppColor.googleText)
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 48)
+                        .padding(.horizontal, 10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .fill(AppColor.googleFill)
+                        )
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 16)
+                                .stroke(AppColor.googleStroke, lineWidth: 1)
+                        )
+                    }
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .buttonStyle(PlainButtonStyle())
                     
                     // Kakao
                     Button {
