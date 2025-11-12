@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct SignUpView: View {
 
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
+    
     var body: some View {
         ZStack {
             // 배경
@@ -54,8 +57,15 @@ struct SignUpView: View {
                 // 소셜 로그인 버튼
                 VStack(spacing: 12) {
                     // Apple
-                    Button{
-                    } label: {}
+                    SignInWithAppleButton(.signIn) { _ in
+                        // 요청 구성
+                    } onCompletion: { _ in
+                        
+                    }
+                    .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    
                     
                     // Google
                     Button {
