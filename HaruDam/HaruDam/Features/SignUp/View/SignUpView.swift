@@ -109,7 +109,24 @@ struct SignUpView: View {
                     
                     // Kakao
                     Button {
-                    } label: {}
+                        
+                    } label: {
+                        HStack(spacing: 15) {
+                            Image("kakao_logo")
+                                .resizable()
+                                .frame(width: 20, height: 20)
+
+                            Text("Kakao로 로그인")
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundColor(AppColor.kakaoLabel.opacity(0.85))
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 44)
+                        .padding(.horizontal, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(AppColor.kakaoFill)
+                        )
+                    }
                 }
                 .padding(.horizontal, 24)
 
