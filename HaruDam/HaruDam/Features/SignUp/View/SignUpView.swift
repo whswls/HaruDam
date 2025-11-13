@@ -19,7 +19,7 @@ struct SignUpView: View {
 
             VStack {
                 // 상단 여백
-                Spacer().frame(height: 160)
+                Spacer().frame(height: 210)
 
                 // 로고 + 리플 애니메이션
                 RippleCircle(
@@ -38,7 +38,7 @@ struct SignUpView: View {
                 )
                 .padding(.bottom, 24)
 
-                Spacer().frame(height: 30)
+                Spacer().frame(height: 40)
                 // 헤드라인
                 VStack(spacing: 8) {
                     Text("하루의 감정을,\n가볍게 기록하세요")
@@ -52,7 +52,7 @@ struct SignUpView: View {
                 }
                 .padding(.horizontal, 24)
 
-                Spacer()
+                Spacer().frame(height: 150)
 
                 // 소셜 로그인 버튼
                 VStack(spacing: 12) {
