@@ -138,7 +138,7 @@ struct SignUpView: View {
                     }
                 }
                 .padding(.horizontal, 24)
-
+                .buttonStyle(.plain) 
                 Spacer()
             }
         }
