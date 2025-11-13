@@ -41,4 +41,8 @@ struct AppColor {
     // Kakao
     static let kakaoFill    = Color("KakaoFill")
     static let kakaoLabel   = Color("KakaoLabel")
+    
+    // Apple
+    static let appleFill    = Color("AppleFill")
+    static let appleText    = Color("AppleText")
 }
