@@ -78,7 +78,8 @@ struct SignUpView: View {
                     Button {
                         
                     } label: {
-                        HStack(spacing: 4) {
+                        HStack(spacing: 14) {
+                            Spacer()
                             if colorScheme == .dark {
                                 Image("google_logo_circle_dark")
                                     .resizable()
@@ -99,20 +100,21 @@ struct SignUpView: View {
                             Text("Google로 로그인")
                                 .font(.custom("Roboto-Medium", size: 18))
                                 .foregroundColor(AppColor.googleText)
+                                .padding(.leading, -10)
+
+                            Spacer()
                         }
                         .frame(maxWidth: .infinity, minHeight: 48)
-                        .padding(.horizontal, 10)
+                        .padding(.horizontal, 16)
                         .background(
-                            RoundedRectangle(cornerRadius: 16)
+                            RoundedRectangle(cornerRadius: 12)
                                 .fill(AppColor.googleFill)
                         )
                         .overlay(
-                            RoundedRectangle(cornerRadius: 16)
+                            RoundedRectangle(cornerRadius: 12)
                                 .stroke(AppColor.googleStroke, lineWidth: 1)
                         )
                     }
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .buttonStyle(PlainButtonStyle())
                     
                     // Kakao
                     Button {
