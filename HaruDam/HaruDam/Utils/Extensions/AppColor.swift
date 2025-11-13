@@ -37,4 +37,8 @@ struct AppColor {
     static let googleFill    = Color("GoogleFill")
     static let googleStroke  = Color("GoogleStroke")
     static let googleText    = Color("GoogleText")
+    
+    // Kakao
+    static let kakaoFill    = Color("KakaoFill")
+    static let kakaoLabel   = Color("KakaoLabel")
 }
