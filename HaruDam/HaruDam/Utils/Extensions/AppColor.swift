@@ -32,4 +32,17 @@ struct AppColor {
     static let gray100       = Color("Gray100")
     static let gray200       = Color("Gray200")
     static let gray300       = Color("Gray300")
+    
+    // Google
+    static let googleFill    = Color("GoogleFill")
+    static let googleStroke  = Color("GoogleStroke")
+    static let googleText    = Color("GoogleText")
+    
+    // Kakao
+    static let kakaoFill    = Color("KakaoFill")
+    static let kakaoLabel   = Color("KakaoLabel")
+    
+    // Apple
+    static let appleFill    = Color("AppleFill")
+    static let appleText    = Color("AppleText")
 }

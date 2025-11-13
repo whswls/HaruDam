@@ -174,7 +174,7 @@
 				};
 			};
 			buildConfigurationList = 8CC7A12A2EBB212600C6B504 /* Build configuration list for PBXProject "HaruDam" */;
-			developmentRegion = en;
+			developmentRegion = ko;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
