@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import CoreData
 
 @main
 struct HaruDamApp: App {
+    // CoreData
+    let persistentController = PersistenceController.shared
+    
     var body: some Scene {
         WindowGroup {
             SplashView()
+                .environment(\.managedObjectContext,
+                              persistentController.container.viewContext)
         }
     }
 }
