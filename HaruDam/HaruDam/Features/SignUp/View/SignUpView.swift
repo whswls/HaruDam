@@ -11,6 +11,7 @@ import AuthenticationServices
 struct SignUpView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @StateObject private var viewModel = SignUpViewModel()
     
     var body: some View {
         ZStack {
@@ -118,7 +119,7 @@ struct SignUpView: View {
                     
                     // Kakao
                     Button {
-                        
+                        viewModel.kakaoLoginButtonTapped()
                     } label: {
                         HStack(spacing: 15) {
                             Image("kakao_logo")
