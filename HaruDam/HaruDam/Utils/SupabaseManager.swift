@@ -37,8 +37,4 @@ final class SupabaseManager {
         static let appRedirect = "harudam://auth-callback"
     }
     
-    func signInWithKakao() async throws -> Session {
-        try await client.auth.signInWithOAuth(provider: .kakao,
-                                              redirectTo: URL(string: Auth.appRedirect))
-    }
 }
