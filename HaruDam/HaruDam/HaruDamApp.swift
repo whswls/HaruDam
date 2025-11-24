@@ -10,14 +10,23 @@ import CoreData
 
 @main
 struct HaruDamApp: App {
+    @StateObject private var appViewModel = AppViewModel()
     // CoreData
     let persistentController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
-            SplashView()
-                .environment(\.managedObjectContext,
-                              persistentController.container.viewContext)
+            Group {
+                if appViewModel.isLoggedIn {
+                    HomeView()
+                } else {
+                    SplashView()
+                }
+            }
+            .environmentObject(appViewModel)
+            .environment(\.managedObjectContext,
+                          persistentController.container.viewContext)
         }
+        
     }
 }
