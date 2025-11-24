@@ -11,6 +11,7 @@ import AuthenticationServices
 struct SignUpView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @EnvironmentObject var appViewModel: AppViewModel
     @StateObject private var viewModel = SignUpViewModel(supabaseManager: .shared)
     
     var body: some View {
@@ -141,6 +142,11 @@ struct SignUpView: View {
                 .padding(.horizontal, 24)
                 .buttonStyle(.plain) 
                 Spacer()
+            }
+        }
+        .onAppear {
+            viewModel.onLoginSuccess = {
+                appViewModel.isLoggedIn = true
             }
         }
     }
