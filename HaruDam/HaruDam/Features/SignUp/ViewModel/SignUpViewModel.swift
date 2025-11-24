@@ -19,9 +19,11 @@ class SignUpViewModel: ObservableObject {
     
     private let supabaseManager: SupabaseManager
     
-    init(supabaseManager: SupabaseManager = .shared) {
-            self.supabaseManager = supabaseManager
+    init(supabaseManager: SupabaseManager) {
+        self.supabaseManager = supabaseManager
     }
+    
+    private var authService: AuthService = AuthService()
     
     func kakaoLoginButtonTapped() {
         Task {
@@ -35,10 +37,8 @@ class SignUpViewModel: ObservableObject {
         defer { isLoading = false }
         
         do {
-            // Supabase를 통해 카카오 OAuth 로그인
-            let response = try await supabaseManager.signInWithKakao()
+            _ = try await authService.signInWithKakaoAndEnsureUser()
             
-            // TODO: 여기서 로그인된 유저 정보 저장/전달 (필요 시)
             onLoginSuccess?()
         } catch {
             errorMessage = "카카오 로그인에 실패했어요. 잠시 후 다시 시도해주세요."

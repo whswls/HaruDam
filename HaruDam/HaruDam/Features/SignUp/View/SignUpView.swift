@@ -11,7 +11,7 @@ import AuthenticationServices
 struct SignUpView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @StateObject private var viewModel = SignUpViewModel()
+    @StateObject private var viewModel = SignUpViewModel(supabaseManager: .shared)
     
     var body: some View {
         ZStack {
