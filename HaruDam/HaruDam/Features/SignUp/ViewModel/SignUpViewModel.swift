@@ -25,6 +25,13 @@ class SignUpViewModel: ObservableObject {
         }
     }
     
+    func googleLoginButtonTapped() {
+        guard !isLoading else { return }
+        Task {
+            await googleLogin()
+        }
+    }
+    
     private func kakaoLogin() async {
         isLoading = true
         errorMessage = nil
@@ -36,6 +43,20 @@ class SignUpViewModel: ObservableObject {
             onLoginSuccess?()
         } catch {
             errorMessage = "카카오 로그인에 실패했어요. 잠시 후 다시 시도해주세요."
+        }
+    }
+    
+    private func googleLogin() async {
+        isLoading = true
+        errorMessage = nil
+        defer { isLoading = false }
+        
+        do {
+            _ = try await authService.signInWithGoogleAndEnsureUser()
+            
+            onLoginSuccess?()
+        } catch {
+            errorMessage = "구글 로그인에 실패했어요. 잠시 후 다시 시도해주세요."
         }
     }
     

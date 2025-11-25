@@ -78,7 +78,7 @@ struct SignUpView: View {
                     
                     // Google
                     Button {
-                        
+                        viewModel.googleLoginButtonTapped()
                     } label: {
                         HStack(spacing: 14) {
                             Spacer()
