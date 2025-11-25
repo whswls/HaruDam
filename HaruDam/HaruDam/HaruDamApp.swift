@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import GoogleSignIn
 
 @main
 struct HaruDamApp: App {
@@ -26,6 +27,9 @@ struct HaruDamApp: App {
             .environmentObject(appViewModel)
             .environment(\.managedObjectContext,
                           persistentController.container.viewContext)
+            .onOpenURL { url in
+                GIDSignIn.sharedInstance.handle(url)
+            }
         }
         
     }
