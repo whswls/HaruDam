@@ -33,30 +33,30 @@ class SignUpViewModel: ObservableObject {
     }
     
     private func kakaoLogin() async {
-        isLoading = true
-        errorMessage = nil
-        defer { isLoading = false }
-        
-        do {
-            _ = try await authService.signInWithKakaoAndEnsureUser()
-            
-            onLoginSuccess?()
-        } catch {
-            errorMessage = "카카오 로그인에 실패했어요. 잠시 후 다시 시도해주세요."
-        }
+        await performLogin(
+            signInAction: { try await authService.signInWithKakaoAndEnsureUser() },
+            failureMessage: "카카오 로그인에 실패했어요. 잠시 후 다시 시도해주세요.")
     }
     
     private func googleLogin() async {
+        await performLogin(
+            signInAction: { try await authService.signInWithGoogleAndEnsureUser() },
+            failureMessage: "구글 로그인에 실패했어요. 잠시 후 다시 시도해주세요.")
+    }
+    
+    private func performLogin<T> (
+        signInAction: () async throws -> T,
+        failureMessage: String
+    ) async {
         isLoading = true
         errorMessage = nil
         defer { isLoading = false }
         
         do {
-            _ = try await authService.signInWithGoogleAndEnsureUser()
-            
+            _ = try await signInAction()
             onLoginSuccess?()
         } catch {
-            errorMessage = "구글 로그인에 실패했어요. 잠시 후 다시 시도해주세요."
+            errorMessage = failureMessage
         }
     }
     
