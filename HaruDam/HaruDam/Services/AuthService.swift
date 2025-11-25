@@ -10,7 +10,7 @@ import Auth
 import Supabase
 
 final class AuthService {
-    
+    static let shared = AuthService()
     private let supabase: SupabaseManager
     
     init(supabase: SupabaseManager = .shared) {

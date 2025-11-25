@@ -16,11 +16,7 @@ class SignUpViewModel: ObservableObject {
     
     // 로그인 성공 시 상위에서 화면 전환할 때 사용
     var onLoginSuccess: (() -> Void)?
-    private var authService: AuthService = AuthService()
-    
-    init(authService: AuthService){
-        self.authService = authService
-    }
+    private var authService: AuthService = .shared
     
     func kakaoLoginButtonTapped() {
         guard !isLoading else { return }
