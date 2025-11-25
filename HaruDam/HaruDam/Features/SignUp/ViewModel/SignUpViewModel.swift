@@ -16,16 +16,14 @@ class SignUpViewModel: ObservableObject {
     
     // 로그인 성공 시 상위에서 화면 전환할 때 사용
     var onLoginSuccess: (() -> Void)?
-    
-    private let supabaseManager: SupabaseManager
-    
-    init(supabaseManager: SupabaseManager) {
-        self.supabaseManager = supabaseManager
-    }
-    
     private var authService: AuthService = AuthService()
     
+    init(authService: AuthService){
+        self.authService = authService
+    }
+    
     func kakaoLoginButtonTapped() {
+        guard !isLoading else { return }
         Task {
             await kakaoLogin()
         }
