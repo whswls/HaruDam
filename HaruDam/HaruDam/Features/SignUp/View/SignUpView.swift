@@ -12,7 +12,7 @@ struct SignUpView: View {
 
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @EnvironmentObject var appViewModel: AppViewModel
-    @StateObject private var viewModel = SignUpViewModel(supabaseManager: .shared)
+    @StateObject private var viewModel = SignUpViewModel()
     
     var body: some View {
         ZStack {
@@ -142,6 +142,15 @@ struct SignUpView: View {
                 .padding(.horizontal, 24)
                 .buttonStyle(.plain) 
                 Spacer()
+            }
+        }
+        .overlay {
+            if viewModel.isLoading {
+                LoadingView(
+                    variant: .fullscreen,
+                    size: .medium,
+                    message: "로그인 중이에요..."
+                )
             }
         }
         .onAppear {
