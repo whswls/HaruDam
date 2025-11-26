@@ -32,6 +32,13 @@ class SignUpViewModel: ObservableObject {
         }
     }
     
+    func appleLoginButtonTapped() {
+        guard !isLoading else { return }
+        Task {
+            await appleLogin()
+        }
+    }
+    
     private func kakaoLogin() async {
         await performLogin(
             signInAction: { try await authService.signInWithKakaoAndEnsureUser() },
@@ -42,6 +49,13 @@ class SignUpViewModel: ObservableObject {
         await performLogin(
             signInAction: { try await authService.signInWithGoogleAndEnsureUser() },
             failureMessage: "구글 로그인에 실패했어요. 잠시 후 다시 시도해주세요.")
+    }
+    
+    private func appleLogin() async {
+        await performLogin(
+            signInAction: { try await authService.signInWithAppleAndEnsureUser() },
+            failureMessage: "Apple 로그인에 실패했어요. 잠시 후 다시 시도해주세요."
+        )
     }
     
     private func performLogin<T> (

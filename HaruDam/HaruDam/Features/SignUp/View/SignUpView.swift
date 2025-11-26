@@ -59,22 +59,25 @@ struct SignUpView: View {
                 // 소셜 로그인 버튼
                 VStack(spacing: 12) {
                     // Apple
-                    HStack(spacing: 15) {
-                        Image(systemName: "applelogo")
-                            .font(.system(size: 20))
-                            .foregroundStyle(AppColor.appleText)
-                        Text("Apple로 로그인")
-                            .font(.system(size: 18, weight: .medium))
-                            .foregroundStyle(AppColor.appleText)
-                            
+                    Button {
+                        viewModel.appleLoginButtonTapped()
+                    } label: {
+                        HStack(spacing: 15) {
+                            Image(systemName: "applelogo")
+                                .font(.system(size: 20))
+                                .foregroundStyle(AppColor.appleText)
+                            Text("Apple로 로그인")
+                                .font(.system(size: 18, weight: .medium))
+                                .foregroundStyle(AppColor.appleText)
+                                
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                            .padding(.horizontal, 16)
+                            .background(
+                                RoundedRectangle(cornerRadius: 12)
+                                    .fill(AppColor.appleFill)
+                            )
                     }
-                    .frame(maxWidth: .infinity, minHeight: 50)
-                        .padding(.horizontal, 16)
-                        .background(
-                            RoundedRectangle(cornerRadius: 12)
-                                .fill(AppColor.appleFill)
-                        )
-                    
                     
                     // Google
                     Button {
