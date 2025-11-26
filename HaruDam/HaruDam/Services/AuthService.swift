@@ -36,6 +36,24 @@ final class AuthService {
         return session
     }
     
+    // MARK: - Apple
+    func signInWithApple() async throws -> Session {
+        try await supabase.client.auth.signInWithOAuth(provider: .apple,
+                                                       redirectTo: URL(string: SupabaseManager.Auth.appRedirect)
+        )
+    }
+    
+    /// 애플 로그인 + user 테이블 자동 가입
+    func signInWithAppleAndEnsureUser() async throws -> Session {
+        let session = try await signInWithApple()
+        
+        let authUser = session.user
+        
+        try await ensureUserExists(for: authUser)
+        
+        return session
+    }
+    
     // MARK: - Google
     func signInWithGoogle() async throws -> Session {
         try await supabase.client.auth.signInWithOAuth(provider: .google,
