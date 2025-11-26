@@ -17,6 +17,7 @@ final class AuthService {
         self.supabase = supabase
     }
     
+    // MARK: - Kakao
     func signInWithKakao() async throws -> Session {
         try await supabase.client.auth.signInWithOAuth(provider: .kakao,
                                                        redirectTo: URL(string: SupabaseManager.Auth.appRedirect))
@@ -30,6 +31,22 @@ final class AuthService {
         let authUser = session.user
         
         // DB에 유저 row 없으면 생성
+        try await ensureUserExists(for: authUser)
+        
+        return session
+    }
+    
+    // MARK: - Google
+    func signInWithGoogle() async throws -> Session {
+        try await supabase.client.auth.signInWithOAuth(provider: .google,
+                                                       redirectTo: URL(string: SupabaseManager.Auth.appRedirect))
+    }
+    
+    func signInWithGoogleAndEnsureUser() async throws -> Session {
+        let session = try await signInWithGoogle()
+        
+        let authUser = session.user
+        
         try await ensureUserExists(for: authUser)
         
         return session
