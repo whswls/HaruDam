@@ -30,14 +30,15 @@ let project = Project(
             product: .app,
             bundleId: "kr.co.HaruDam",
             deploymentTargets: .iOS("16.0"),
-            // ⬇️ Project.swift 기준 상대 경로
+            // Project.swift 기준 상대 경로
             infoPlist: .file(path: "HaruDam/Info.plist"),
             sources: [
                 "HaruDam/**"
             ],
             resources: [
                 "HaruDam/Resources/**",
-                "HaruDam/**/Assets.xcassets"
+                "HaruDam/**/Assets.xcassets",
+                "HaruDam/**.xcdatamodeld"
             ],
             dependencies: [
                 .package(product: "GoogleSignIn"),
