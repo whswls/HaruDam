@@ -133,5 +133,12 @@ iOSInjectionProject/
 *.xcconfig
 .env
 
+# Tuist (Generated files)
+*.xcodeproj
+*.xcworkspace
+Derived/
+Tuist/Cache/
+Tuist/Generated/
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode,macos
 
