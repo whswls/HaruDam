@@ -3,87 +3,107 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C69CAC22ECB60D2009701FB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 8C69CAC12ECB60D2009701FB /* KakaoSDK */; };
-		8C69CAC42ECB60D2009701FB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8C69CAC32ECB60D2009701FB /* KakaoSDKAuth */; };
-		8C69CAC62ECB60D2009701FB /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 8C69CAC52ECB60D2009701FB /* KakaoSDKCert */; };
-		8C69CAC82ECB60D2009701FB /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8C69CAC72ECB60D2009701FB /* KakaoSDKCertCore */; };
-		8C69CACA2ECB60D2009701FB /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 8C69CAC92ECB60D2009701FB /* KakaoSDKCommon */; };
-		8CC7A4622EC2FC5C00C6B504 /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4612EC2FC5C00C6B504 /* Auth */; };
-		8CC7A4662EC2FC5C00C6B504 /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4652EC2FC5C00C6B504 /* PostgREST */; };
-		8CC7A46A2EC2FC5C00C6B504 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A4692EC2FC5C00C6B504 /* Storage */; };
-		8CC7A5E42EC3107200C6B504 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8CC7A5E32EC3107200C6B504 /* Supabase */; };
-		8CF894522ED5CDEC00C201E9 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 8CF894512ED5CDEC00C201E9 /* GoogleSignIn */; };
-		8CF894542ED5CDEC00C201E9 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8CF894532ED5CDEC00C201E9 /* GoogleSignInSwift */; };
+		051EB001675B19B03060D189 /* SupabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060EE282A0B9F0B258F2777B /* SupabaseManager.swift */; };
+		0D6FC1EB9FC12129088BC83A /* RippleCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8337EA76B51F130D5915F74C /* RippleCircle.swift */; };
+		15536D401AB1F6E4A64B8885 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = FEF84DBD8A3BA3FF58F9962E /* KakaoSDK */; };
+		1B4EEBE6234C1947F7AD7A6A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B98D826F8B8E1EC3ECD0C75 /* User.swift */; };
+		1EADF7358A06D684A48C5B17 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C8509434C5329FF38023AE /* PersistenceController.swift */; };
+		2600AF8D356250D1751B2D2C /* TuistAssets+HaruDam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2649E4693020BEF4E85772F6 /* TuistAssets+HaruDam.swift */; };
+		2C566A55581FE12C43267D83 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF8E78649C6CB1BA22347BB /* SplashView.swift */; };
+		2F7A4C6EB64479636AEA32AA /* TuistBundle+HaruDam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7618813891C1CFBA43EDEA45 /* TuistBundle+HaruDam.swift */; };
+		36F1190817AB23961D06751D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77543AA0817F65CB2BD4C63D /* Assets.xcassets */; };
+		468C97C0DBC3FFD37EC1C8EB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */; };
+		496DE70D988754C028EC2CCB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 48F89E3F86C3C0C43417D9D7 /* GoogleSignIn */; };
+		4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E73DABA943C5E66C7F4D34B /* SignUpView.swift */; };
+		5A783CAC8E3AA76485DC97D2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */; };
+		9DF46ED3887B8B7A601A09EC /* TuistFonts+HaruDam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D0720B26632DBAEC95BAB /* TuistFonts+HaruDam.swift */; };
+		B0FA3B7E30989080D878C585 /* UserProfileCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC51B0AD1DF60CF948E8BF /* UserProfileCoreDataTests.swift */; };
+		B2107CDAAC8F22A29BA7D2C2 /* SupabaseConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A37E64281D0919176DFD1 /* SupabaseConnectionTests.swift */; };
+		BFCCE1F70729460E0F27FE9A /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = ADADFA575D9E111F653167FB /* Supabase */; };
+		D44055A09FD8EEE60C669B34 /* HaruDamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39643DA2E0A57099C3BEB7D /* HaruDamApp.swift */; };
+		D65943A189F394B25BDF11FD /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F298067425F4866065928E5A /* AppViewModel.swift */; };
+		E20F8B21DD5188C6539045DE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C6ADB2CD02D28F4E01A39E /* AuthService.swift */; };
+		E6AEF0F27E3968CC78E50B0F /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE68C84A9AD7E974EDD870F /* SignUpViewModel.swift */; };
+		F7CBE1459227B227E87C521D /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38636680B967AD4115660205 /* LoadingView.swift */; };
+		FCD8543B6B1C74CB737AB5EA /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3415BA108DB3B663B780F4 /* AppColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8CC7A7642EC3305900C6B504 /* PBXContainerItemProxy */ = {
+		2F902C7A8337E9CA0DB4893B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8CC7A1272EBB212600C6B504 /* Project object */;
+			containerPortal = FC26CD2713ADC91691BB4D8F /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 8CC7A12E2EBB212600C6B504;
+			remoteGlobalIDString = C8225A6615754A28F0FAF964;
 			remoteInfo = HaruDam;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		67A7F3D52A39D76E7E363C9F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8451D06B38003F33056DF485 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		8CC7A12F2EBB212600C6B504 /* HaruDam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruDam.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaruDamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		060EE282A0B9F0B258F2777B /* SupabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseManager.swift; sourceTree = "<group>"; };
+		07336F6A4DE3A2B15C5F0D8B /* HaruDam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaruDam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B98D826F8B8E1EC3ECD0C75 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2649E4693020BEF4E85772F6 /* TuistAssets+HaruDam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+HaruDam.swift"; sourceTree = "<group>"; };
+		38636680B967AD4115660205 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		3A3415BA108DB3B663B780F4 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		490D0720B26632DBAEC95BAB /* TuistFonts+HaruDam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+HaruDam.swift"; sourceTree = "<group>"; };
+		4E73DABA943C5E66C7F4D34B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		6EEC51B0AD1DF60CF948E8BF /* UserProfileCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCoreDataTests.swift; sourceTree = "<group>"; };
+		6F628364144F14B7E984D8F2 /* HaruDamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaruDamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7618813891C1CFBA43EDEA45 /* TuistBundle+HaruDam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+HaruDam.swift"; sourceTree = "<group>"; };
+		77543AA0817F65CB2BD4C63D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		790A37E64281D0919176DFD1 /* SupabaseConnectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseConnectionTests.swift; sourceTree = "<group>"; };
+		7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7FF8E78649C6CB1BA22347BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		8337EA76B51F130D5915F74C /* RippleCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleCircle.swift; sourceTree = "<group>"; };
+		9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		A39643DA2E0A57099C3BEB7D /* HaruDamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaruDamApp.swift; sourceTree = "<group>"; };
+		B5C6ADB2CD02D28F4E01A39E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		CFE68C84A9AD7E974EDD870F /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D98A69644AC2740DE4F0C452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DCD81377E42425EAAE3285AB /* HaruDamTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "HaruDamTests-Info.plist"; sourceTree = "<group>"; };
+		E4C8509434C5329FF38023AE /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		F298067425F4866065928E5A /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		8CC7A75B2EC313E600C6B504 /* Exceptions for "HaruDam" folder in "HaruDam" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Config/Config.Keys.xcconfig,
-				Config/Debug.xcconfig,
-				Config/Release.xcconfig,
-				Info.plist,
-			);
-			target = 8CC7A12E2EBB212600C6B504 /* HaruDam */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		8CC7A1312EBB212600C6B504 /* HaruDam */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				8CC7A75B2EC313E600C6B504 /* Exceptions for "HaruDam" folder in "HaruDam" target */,
-			);
-			path = HaruDam;
-			sourceTree = "<group>";
-		};
-		8CC7A7612EC3305900C6B504 /* HaruDamTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HaruDamTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		8CC7A12C2EBB212600C6B504 /* Frameworks */ = {
+		9A4A02BE76F96AE7F6467B65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C69CAC82ECB60D2009701FB /* KakaoSDKCertCore in Frameworks */,
-				8CC7A4662EC2FC5C00C6B504 /* PostgREST in Frameworks */,
-				8C69CAC22ECB60D2009701FB /* KakaoSDK in Frameworks */,
-				8CC7A5E42EC3107200C6B504 /* Supabase in Frameworks */,
-				8C69CACA2ECB60D2009701FB /* KakaoSDKCommon in Frameworks */,
-				8CF894522ED5CDEC00C201E9 /* GoogleSignIn in Frameworks */,
-				8CC7A4622EC2FC5C00C6B504 /* Auth in Frameworks */,
-				8CC7A46A2EC2FC5C00C6B504 /* Storage in Frameworks */,
-				8C69CAC62ECB60D2009701FB /* KakaoSDKCert in Frameworks */,
-				8C69CAC42ECB60D2009701FB /* KakaoSDKAuth in Frameworks */,
-				8CF894542ED5CDEC00C201E9 /* GoogleSignInSwift in Frameworks */,
+				496DE70D988754C028EC2CCB /* GoogleSignIn in Frameworks */,
+				BFCCE1F70729460E0F27FE9A /* Supabase in Frameworks */,
+				15536D401AB1F6E4A64B8885 /* KakaoSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CC7A75D2EC3305900C6B504 /* Frameworks */ = {
+		D5F8D2A3FB04671322122427 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,188 +113,386 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8CC7A1262EBB212600C6B504 = {
+		0B00296C19F39A35E830DC5E /* Derived */ = {
 			isa = PBXGroup;
 			children = (
-				8CC7A1312EBB212600C6B504 /* HaruDam */,
-				8CC7A7612EC3305900C6B504 /* HaruDamTests */,
-				8CC7A5E22EC3107200C6B504 /* Frameworks */,
-				8CC7A1302EBB212600C6B504 /* Products */,
+				638FCAF46C3B2930AF030AA7 /* InfoPlists */,
+				522244D0C99EF475DD1E54D4 /* Sources */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		16548BEC2B63A3D4437A0D3D /* HaruDamTests */ = {
+			isa = PBXGroup;
+			children = (
+				790A37E64281D0919176DFD1 /* SupabaseConnectionTests.swift */,
+				6EEC51B0AD1DF60CF948E8BF /* UserProfileCoreDataTests.swift */,
+			);
+			path = HaruDamTests;
+			sourceTree = "<group>";
+		};
+		522244D0C99EF475DD1E54D4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2649E4693020BEF4E85772F6 /* TuistAssets+HaruDam.swift */,
+				7618813891C1CFBA43EDEA45 /* TuistBundle+HaruDam.swift */,
+				490D0720B26632DBAEC95BAB /* TuistFonts+HaruDam.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		57C5EE9E0D4597F902D017AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5808272BF0D4985395568814 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8337EA76B51F130D5915F74C /* RippleCircle.swift */,
+				7FF8E78649C6CB1BA22347BB /* SplashView.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		5AB7C0AC9D868DB6303F030C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E73DABA943C5E66C7F4D34B /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5F4AED538AD9D98CB88D308A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5C6ADB2CD02D28F4E01A39E /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		60F70E220B40749571E6404E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C52C0746B694A603674EBCF /* Extensions */,
+				060EE282A0B9F0B258F2777B /* SupabaseManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		638FCAF46C3B2930AF030AA7 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				DCD81377E42425EAAE3285AB /* HaruDamTests-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		6F278E9B59AA58E49A534B65 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				BD0FFFD04D9C9AE769F30E88 /* Home */,
+				BA207D7663CE4C425DEE785C /* SignUp */,
+				5808272BF0D4985395568814 /* Splash */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		7C52C0746B694A603674EBCF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A3415BA108DB3B663B780F4 /* AppColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		88C95848A75EA582E4F19FD5 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				38636680B967AD4115660205 /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		8CE3F7E89F3EB36430039FFE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				88C95848A75EA582E4F19FD5 /* Loading */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		91C7050A7A740B421B3930E6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57C5EE9E0D4597F902D017AE /* Fonts */,
+				77543AA0817F65CB2BD4C63D /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		959BFF43CD8542530BE7EC8D = {
+			isa = PBXGroup;
+			children = (
+				FDA2235C9AE1904054DD45FA /* Products */,
+				BF073201B1D65FDE38ED651A /* Project */,
 			);
 			sourceTree = "<group>";
 		};
-		8CC7A1302EBB212600C6B504 /* Products */ = {
+		BA207D7663CE4C425DEE785C /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
-				8CC7A12F2EBB212600C6B504 /* HaruDam.app */,
-				8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */,
+				5AB7C0AC9D868DB6303F030C /* View */,
+				EA25EE1778FE26FF0049ACFA /* ViewModel */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		BD0FFFD04D9C9AE769F30E88 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ED413DC81DC53E4028194922 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BF073201B1D65FDE38ED651A /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				0B00296C19F39A35E830DC5E /* Derived */,
+				CF9730CA0643A7DF2336B557 /* HaruDam */,
+				16548BEC2B63A3D4437A0D3D /* HaruDamTests */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		CF68A177CAAFED0DB2034F0A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E4C8509434C5329FF38023AE /* PersistenceController.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CF9730CA0643A7DF2336B557 /* HaruDam */ = {
+			isa = PBXGroup;
+			children = (
+				8CE3F7E89F3EB36430039FFE /* Components */,
+				CF68A177CAAFED0DB2034F0A /* CoreData */,
+				FF9DC5B1453C72A2DE5C3D7A /* Domain */,
+				6F278E9B59AA58E49A534B65 /* Features */,
+				EA6514DD2B9D317DD0A32050 /* Managers */,
+				91C7050A7A740B421B3930E6 /* Resources */,
+				5F4AED538AD9D98CB88D308A /* Services */,
+				60F70E220B40749571E6404E /* Utils */,
+				A39643DA2E0A57099C3BEB7D /* HaruDamApp.swift */,
+				D98A69644AC2740DE4F0C452 /* Info.plist */,
+			);
+			path = HaruDam;
+			sourceTree = "<group>";
+		};
+		EA25EE1778FE26FF0049ACFA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CFE68C84A9AD7E974EDD870F /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EA6514DD2B9D317DD0A32050 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F298067425F4866065928E5A /* AppViewModel.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		ED413DC81DC53E4028194922 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDA2235C9AE1904054DD45FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07336F6A4DE3A2B15C5F0D8B /* HaruDam.app */,
+				6F628364144F14B7E984D8F2 /* HaruDamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8CC7A5E22EC3107200C6B504 /* Frameworks */ = {
+		FF9DC5B1453C72A2DE5C3D7A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				0B98D826F8B8E1EC3ECD0C75 /* User.swift */,
 			);
-			name = Frameworks;
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8CC7A12E2EBB212600C6B504 /* HaruDam */ = {
+		C8225A6615754A28F0FAF964 /* HaruDam */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CC7A13A2EBB212700C6B504 /* Build configuration list for PBXNativeTarget "HaruDam" */;
+			buildConfigurationList = 7AC525B252D938632C085803 /* Build configuration list for PBXNativeTarget "HaruDam" */;
 			buildPhases = (
-				8CC7A12B2EBB212600C6B504 /* Sources */,
-				8CC7A12C2EBB212600C6B504 /* Frameworks */,
-				8CC7A12D2EBB212600C6B504 /* Resources */,
+				94AEC339C3891C0CDB97C8E7 /* Sources */,
+				AC726E31B01E0B32D1EEDAA3 /* Resources */,
+				9A4A02BE76F96AE7F6467B65 /* Frameworks */,
+				67A7F3D52A39D76E7E363C9F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				8CC7A1312EBB212600C6B504 /* HaruDam */,
 			);
 			name = HaruDam;
 			packageProductDependencies = (
-				8CC7A4612EC2FC5C00C6B504 /* Auth */,
-				8CC7A4652EC2FC5C00C6B504 /* PostgREST */,
-				8CC7A4692EC2FC5C00C6B504 /* Storage */,
-				8CC7A5E32EC3107200C6B504 /* Supabase */,
-				8C69CAC12ECB60D2009701FB /* KakaoSDK */,
-				8C69CAC32ECB60D2009701FB /* KakaoSDKAuth */,
-				8C69CAC52ECB60D2009701FB /* KakaoSDKCert */,
-				8C69CAC72ECB60D2009701FB /* KakaoSDKCertCore */,
-				8C69CAC92ECB60D2009701FB /* KakaoSDKCommon */,
-				8CF894512ED5CDEC00C201E9 /* GoogleSignIn */,
-				8CF894532ED5CDEC00C201E9 /* GoogleSignInSwift */,
+				48F89E3F86C3C0C43417D9D7 /* GoogleSignIn */,
+				ADADFA575D9E111F653167FB /* Supabase */,
+				FEF84DBD8A3BA3FF58F9962E /* KakaoSDK */,
 			);
 			productName = HaruDam;
-			productReference = 8CC7A12F2EBB212600C6B504 /* HaruDam.app */;
+			productReference = 07336F6A4DE3A2B15C5F0D8B /* HaruDam.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8CC7A75F2EC3305900C6B504 /* HaruDamTests */ = {
+		D52465FD25C0AB79F46391DA /* HaruDamTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8CC7A7662EC3305900C6B504 /* Build configuration list for PBXNativeTarget "HaruDamTests" */;
+			buildConfigurationList = 4C686AE3A664B9C7C93FC135 /* Build configuration list for PBXNativeTarget "HaruDamTests" */;
 			buildPhases = (
-				8CC7A75C2EC3305900C6B504 /* Sources */,
-				8CC7A75D2EC3305900C6B504 /* Frameworks */,
-				8CC7A75E2EC3305900C6B504 /* Resources */,
+				CEC6369F6DF183DE03E95CD4 /* Sources */,
+				4ABE35AFE32C3F114DF8212E /* Resources */,
+				D5F8D2A3FB04671322122427 /* Frameworks */,
+				8451D06B38003F33056DF485 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				8CC7A7652EC3305900C6B504 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				8CC7A7612EC3305900C6B504 /* HaruDamTests */,
+				9841D4B9843E0E1BDC056A50 /* PBXTargetDependency */,
 			);
 			name = HaruDamTests;
 			packageProductDependencies = (
 			);
 			productName = HaruDamTests;
-			productReference = 8CC7A7602EC3305900C6B504 /* HaruDamTests.xctest */;
+			productReference = 6F628364144F14B7E984D8F2 /* HaruDamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8CC7A1272EBB212600C6B504 /* Project object */ = {
+		FC26CD2713ADC91691BB4D8F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2610;
+				BuildIndependentTargetsInParallel = YES;
+				ORGANIZATIONNAME = kr.co.HaruDam;
 				TargetAttributes = {
-					8CC7A12E2EBB212600C6B504 = {
-						CreatedOnToolsVersion = 26.0.1;
-					};
-					8CC7A75F2EC3305900C6B504 = {
-						CreatedOnToolsVersion = 26.0.1;
-						TestTargetID = 8CC7A12E2EBB212600C6B504;
+					D52465FD25C0AB79F46391DA = {
+						TestTargetID = C8225A6615754A28F0FAF964;
 					};
 				};
 			};
-			buildConfigurationList = 8CC7A12A2EBB212600C6B504 /* Build configuration list for PBXProject "HaruDam" */;
-			developmentRegion = ko;
+			buildConfigurationList = 955CE03AE5D2DFBECE271099 /* Build configuration list for PBXProject "HaruDam" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
-				ko,
+				en,
 			);
-			mainGroup = 8CC7A1262EBB212600C6B504;
-			minimizedProjectReferenceProxies = 1;
+			mainGroup = 959BFF43CD8542530BE7EC8D;
 			packageReferences = (
-				8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */,
-				8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
-				8CF894502ED5CDEC00C201E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				472DE52AEEBC6A86E0469ACA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E007C5537DC6C9A24AEAF75E /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				C6BC69129E4E7A57FE102C1B /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
-			preferredProjectObjectVersion = 77;
-			productRefGroup = 8CC7A1302EBB212600C6B504 /* Products */;
+			productRefGroup = FDA2235C9AE1904054DD45FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8CC7A12E2EBB212600C6B504 /* HaruDam */,
-				8CC7A75F2EC3305900C6B504 /* HaruDamTests */,
+				C8225A6615754A28F0FAF964 /* HaruDam */,
+				D52465FD25C0AB79F46391DA /* HaruDamTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8CC7A12D2EBB212600C6B504 /* Resources */ = {
+		4ABE35AFE32C3F114DF8212E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CC7A75E2EC3305900C6B504 /* Resources */ = {
+		AC726E31B01E0B32D1EEDAA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F1190817AB23961D06751D /* Assets.xcassets in Resources */,
+				5A783CAC8E3AA76485DC97D2 /* Roboto-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8CC7A12B2EBB212600C6B504 /* Sources */ = {
+		94AEC339C3891C0CDB97C8E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2600AF8D356250D1751B2D2C /* TuistAssets+HaruDam.swift in Sources */,
+				2F7A4C6EB64479636AEA32AA /* TuistBundle+HaruDam.swift in Sources */,
+				9DF46ED3887B8B7A601A09EC /* TuistFonts+HaruDam.swift in Sources */,
+				F7CBE1459227B227E87C521D /* LoadingView.swift in Sources */,
+				1EADF7358A06D684A48C5B17 /* PersistenceController.swift in Sources */,
+				1B4EEBE6234C1947F7AD7A6A /* User.swift in Sources */,
+				468C97C0DBC3FFD37EC1C8EB /* HomeView.swift in Sources */,
+				4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */,
+				E6AEF0F27E3968CC78E50B0F /* SignUpViewModel.swift in Sources */,
+				0D6FC1EB9FC12129088BC83A /* RippleCircle.swift in Sources */,
+				2C566A55581FE12C43267D83 /* SplashView.swift in Sources */,
+				D44055A09FD8EEE60C669B34 /* HaruDamApp.swift in Sources */,
+				D65943A189F394B25BDF11FD /* AppViewModel.swift in Sources */,
+				E20F8B21DD5188C6539045DE /* AuthService.swift in Sources */,
+				FCD8543B6B1C74CB737AB5EA /* AppColor.swift in Sources */,
+				051EB001675B19B03060D189 /* SupabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8CC7A75C2EC3305900C6B504 /* Sources */ = {
+		CEC6369F6DF183DE03E95CD4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2107CDAAC8F22A29BA7D2C2 /* SupabaseConnectionTests.swift in Sources */,
+				B0FA3B7E30989080D878C585 /* UserProfileCoreDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		8CC7A7652EC3305900C6B504 /* PBXTargetDependency */ = {
+		9841D4B9843E0E1BDC056A50 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8CC7A12E2EBB212600C6B504 /* HaruDam */;
-			targetProxy = 8CC7A7642EC3305900C6B504 /* PBXContainerItemProxy */;
+			name = HaruDam;
+			target = C8225A6615754A28F0FAF964 /* HaruDam */;
+			targetProxy = 2F902C7A8337E9CA0DB4893B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		8CC7A1382EBB212700C6B504 /* Debug */ = {
+		061D0EF7D015D75FC773D750 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -301,12 +519,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -320,26 +537,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		8CC7A1392EBB212700C6B504 /* Release */ = {
+		2BACE04C7EE35B93FCB12E63 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -366,12 +579,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -379,160 +591,151 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		8CC7A13B2EBB212700C6B504 /* Debug */ = {
+		3DEA68EEF90E7FA964B31A5B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8CC7A1312EBB212600C6B504 /* HaruDam */;
-			baseConfigurationReferenceRelativePath = Config/Debug.xcconfig;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HaruDam/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Derived/InfoPlists/HaruDamTests-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDam;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDamTests;
+				PRODUCT_NAME = HaruDamTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		8CC7A13C2EBB212700C6B504 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReferenceAnchor = 8CC7A1312EBB212600C6B504 /* HaruDam */;
-			baseConfigurationReferenceRelativePath = Config/Release.xcconfig;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = HaruDam/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDam;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaruDam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaruDam";
+				TEST_TARGET_NAME = HaruDam;
 			};
 			name = Release;
 		};
-		8CC7A7672EC3305900C6B504 /* Debug */ = {
+		8C74B88D706B81489D8A6670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDamTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HaruDam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDam;
+				PRODUCT_NAME = HaruDam;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaruDam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaruDam";
 			};
 			name = Debug;
 		};
-		8CC7A7682EC3305900C6B504 /* Release */ = {
+		98A04A9965F1E2FF9A8476AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CW5VMZLJAM;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Derived/InfoPlists/HaruDamTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDamTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				PRODUCT_NAME = HaruDamTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = (
+					"$(inherited)",
+					DEBUG,
+				);
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HaruDam.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HaruDam";
+				TEST_TARGET_NAME = HaruDam;
+			};
+			name = Debug;
+		};
+		AB3465E5B43971A155EA9DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = HaruDam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.HaruDam;
+				PRODUCT_NAME = HaruDam;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8CC7A12A2EBB212600C6B504 /* Build configuration list for PBXProject "HaruDam" */ = {
+		4C686AE3A664B9C7C93FC135 /* Build configuration list for PBXNativeTarget "HaruDamTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CC7A1382EBB212700C6B504 /* Debug */,
-				8CC7A1392EBB212700C6B504 /* Release */,
+				98A04A9965F1E2FF9A8476AB /* Debug */,
+				3DEA68EEF90E7FA964B31A5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CC7A13A2EBB212700C6B504 /* Build configuration list for PBXNativeTarget "HaruDam" */ = {
+		7AC525B252D938632C085803 /* Build configuration list for PBXNativeTarget "HaruDam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CC7A13B2EBB212700C6B504 /* Debug */,
-				8CC7A13C2EBB212700C6B504 /* Release */,
+				8C74B88D706B81489D8A6670 /* Debug */,
+				AB3465E5B43971A155EA9DB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8CC7A7662EC3305900C6B504 /* Build configuration list for PBXNativeTarget "HaruDamTests" */ = {
+		955CE03AE5D2DFBECE271099 /* Build configuration list for PBXProject "HaruDam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8CC7A7672EC3305900C6B504 /* Debug */,
-				8CC7A7682EC3305900C6B504 /* Release */,
+				061D0EF7D015D75FC773D750 /* Debug */,
+				2BACE04C7EE35B93FCB12E63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -540,23 +743,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.26.0;
-			};
-		};
-		8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/supabase-community/supabase-swift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.5.1;
-			};
-		};
-		8CF894502ED5CDEC00C201E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+		472DE52AEEBC6A86E0469ACA /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
 			requirement = {
@@ -564,65 +751,38 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		C6BC69129E4E7A57FE102C1B /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase-community/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		E007C5537DC6C9A24AEAF75E /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.26.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8C69CAC12ECB60D2009701FB /* KakaoSDK */ = {
+		48F89E3F86C3C0C43417D9D7 /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDK;
-		};
-		8C69CAC32ECB60D2009701FB /* KakaoSDKAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKAuth;
-		};
-		8C69CAC52ECB60D2009701FB /* KakaoSDKCert */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKCert;
-		};
-		8C69CAC72ECB60D2009701FB /* KakaoSDKCertCore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKCertCore;
-		};
-		8C69CAC92ECB60D2009701FB /* KakaoSDKCommon */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8C69CAC02ECB60D2009701FB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
-			productName = KakaoSDKCommon;
-		};
-		8CC7A4612EC2FC5C00C6B504 /* Auth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Auth;
-		};
-		8CC7A4652EC2FC5C00C6B504 /* PostgREST */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = PostgREST;
-		};
-		8CC7A4692EC2FC5C00C6B504 /* Storage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Storage;
-		};
-		8CC7A5E32EC3107200C6B504 /* Supabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CC7A4602EC2FC5C00C6B504 /* XCRemoteSwiftPackageReference "supabase-swift" */;
-			productName = Supabase;
-		};
-		8CF894512ED5CDEC00C201E9 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8CF894502ED5CDEC00C201E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
 		};
-		8CF894532ED5CDEC00C201E9 /* GoogleSignInSwift */ = {
+		ADADFA575D9E111F653167FB /* Supabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8CF894502ED5CDEC00C201E9 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignInSwift;
+			productName = Supabase;
+		};
+		FEF84DBD8A3BA3FF58F9962E /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = KakaoSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 8CC7A1272EBB212600C6B504 /* Project object */;
+	rootObject = FC26CD2713ADC91691BB4D8F /* Project object */;
 }
