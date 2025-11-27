@@ -21,6 +21,10 @@ let project = Project(
     settings: .settings(
         base: [
             "IPHONEOS_DEPLOYMENT_TARGET": "16.0"
+        ],
+        configurations: [
+                .debug(name: "Debug", xcconfig: "HaruDam/Config/Debug.xcconfig"),
+                .release(name: "Release", xcconfig: "HaruDam/Config/Release.xcconfig")
         ]
     ),
     targets: [
