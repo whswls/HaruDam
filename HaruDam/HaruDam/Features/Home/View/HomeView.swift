@@ -15,6 +15,14 @@ struct EmotionRecord: Identifiable {
 }
 
 struct HomeView: View {
+    var nickname: String = "사용자"
+    
+    private var formattedToday: String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_KR")
+        formatter.dateFormat = "yyyy년 M월 d일 EEEE"
+        return formatter.string(from: Date())
+    }
     
     private let recentEmotions: [EmotionRecord] = [
         .init(title: "평온함", dateText: "10월 30일", iconName: "moon.stars.fill"),
@@ -55,10 +63,10 @@ private extension HomeView {
     
     var headerSection: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("안녕하세요 00님")
+            Text("안녕하세요 \(nickname)님")
                 .font(.system(size: 28, weight: .bold))
             
-            Text("2025년 10월 31일 금요일")
+            Text(formattedToday)
                 .font(.system(size: 13))
                 .foregroundColor(.gray)
         }
