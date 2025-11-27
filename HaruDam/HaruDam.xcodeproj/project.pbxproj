@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -95,6 +95,10 @@
 		F298067425F4866065928E5A /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		FF01C4BEDD01EBA1A9DDD9E0 /* HaruDamModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HaruDamModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8CA9213E2ED87CAD00E4852B /* Sections */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sections; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9A4A02BE76F96AE7F6467B65 /* Frameworks */ = {
@@ -319,6 +323,7 @@
 		ED413DC81DC53E4028194922 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8CA9213E2ED87CAD00E4852B /* Sections */,
 				7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */,
 			);
 			path = View;
@@ -365,6 +370,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8CA9213E2ED87CAD00E4852B /* Sections */,
 			);
 			name = HaruDam;
 			packageProductDependencies = (
