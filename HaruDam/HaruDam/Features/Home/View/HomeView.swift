@@ -69,6 +69,7 @@ private extension HomeView {
             Text(formattedToday)
                 .font(.system(size: 13))
                 .foregroundColor(.gray)
+                .padding(.leading, 3)
         }
     }
     
