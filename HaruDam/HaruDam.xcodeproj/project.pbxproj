@@ -22,6 +22,7 @@
 		5A783CAC8E3AA76485DC97D2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */; };
 		799044E4460904F7A1805269 /* HaruDamModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1541F0849CE6A47F20CDF064 /* HaruDamModel.xcdatamodeld */; };
 		8CA921482ED9924800E4852B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA921472ED9924800E4852B /* MainTabView.swift */; };
+		8CA921522ED996E000E4852B /* EmotionRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA921512ED996E000E4852B /* EmotionRecord.swift */; };
 		9DF46ED3887B8B7A601A09EC /* TuistFonts+HaruDam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D0720B26632DBAEC95BAB /* TuistFonts+HaruDam.swift */; };
 		B0FA3B7E30989080D878C585 /* UserProfileCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC51B0AD1DF60CF948E8BF /* UserProfileCoreDataTests.swift */; };
 		B2107CDAAC8F22A29BA7D2C2 /* SupabaseConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A37E64281D0919176DFD1 /* SupabaseConnectionTests.swift */; };
@@ -85,6 +86,7 @@
 		7FF8E78649C6CB1BA22347BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		8337EA76B51F130D5915F74C /* RippleCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleCircle.swift; sourceTree = "<group>"; };
 		8CA921472ED9924800E4852B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		8CA921512ED996E000E4852B /* EmotionRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRecord.swift; sourceTree = "<group>"; };
 		9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		9F5108D7CED75EC53D2FF76D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		A03E0CF08B9EF11E8763561D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				0B98D826F8B8E1EC3ECD0C75 /* User.swift */,
+				8CA921512ED996E000E4852B /* EmotionRecord.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				1B4EEBE6234C1947F7AD7A6A /* User.swift in Sources */,
 				468C97C0DBC3FFD37EC1C8EB /* HomeView.swift in Sources */,
 				4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */,
+				8CA921522ED996E000E4852B /* EmotionRecord.swift in Sources */,
 				E6AEF0F27E3968CC78E50B0F /* SignUpViewModel.swift in Sources */,
 				0D6FC1EB9FC12129088BC83A /* RippleCircle.swift in Sources */,
 				2C566A55581FE12C43267D83 /* SplashView.swift in Sources */,
