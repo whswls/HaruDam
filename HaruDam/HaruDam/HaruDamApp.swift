@@ -19,7 +19,7 @@ struct HaruDamApp: App {
         WindowGroup {
             Group {
                 if appViewModel.isLoggedIn {
-                    HomeView()
+                    MainTabView()
                 } else {
                     SplashView()
                 }

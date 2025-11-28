@@ -21,6 +21,7 @@
 		4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E73DABA943C5E66C7F4D34B /* SignUpView.swift */; };
 		5A783CAC8E3AA76485DC97D2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */; };
 		799044E4460904F7A1805269 /* HaruDamModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1541F0849CE6A47F20CDF064 /* HaruDamModel.xcdatamodeld */; };
+		8CA921482ED9924800E4852B /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA921472ED9924800E4852B /* MainTabView.swift */; };
 		9DF46ED3887B8B7A601A09EC /* TuistFonts+HaruDam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D0720B26632DBAEC95BAB /* TuistFonts+HaruDam.swift */; };
 		B0FA3B7E30989080D878C585 /* UserProfileCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEC51B0AD1DF60CF948E8BF /* UserProfileCoreDataTests.swift */; };
 		B2107CDAAC8F22A29BA7D2C2 /* SupabaseConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790A37E64281D0919176DFD1 /* SupabaseConnectionTests.swift */; };
@@ -83,6 +84,7 @@
 		7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7FF8E78649C6CB1BA22347BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		8337EA76B51F130D5915F74C /* RippleCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleCircle.swift; sourceTree = "<group>"; };
+		8CA921472ED9924800E4852B /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		9F5108D7CED75EC53D2FF76D /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		A03E0CF08B9EF11E8763561D /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -98,6 +100,8 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8CA9213E2ED87CAD00E4852B /* Sections */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sections; sourceTree = "<group>"; };
+		8CA9214D2ED993D600E4852B /* Record */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Record; sourceTree = "<group>"; };
+		8CA9214F2ED993EA00E4852B /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 		6F278E9B59AA58E49A534B65 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8CA9214F2ED993EA00E4852B /* Profile */,
+				8CA9214D2ED993D600E4852B /* Record */,
 				BD0FFFD04D9C9AE769F30E88 /* Home */,
 				BA207D7663CE4C425DEE785C /* SignUp */,
 				5808272BF0D4985395568814 /* Splash */,
@@ -325,6 +331,7 @@
 			children = (
 				8CA9213E2ED87CAD00E4852B /* Sections */,
 				7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */,
+				8CA921472ED9924800E4852B /* MainTabView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +380,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				8CA9213E2ED87CAD00E4852B /* Sections */,
+				8CA9214D2ED993D600E4852B /* Record */,
+				8CA9214F2ED993EA00E4852B /* Profile */,
 			);
 			name = HaruDam;
 			packageProductDependencies = (
@@ -478,6 +487,7 @@
 				E6AEF0F27E3968CC78E50B0F /* SignUpViewModel.swift in Sources */,
 				0D6FC1EB9FC12129088BC83A /* RippleCircle.swift in Sources */,
 				2C566A55581FE12C43267D83 /* SplashView.swift in Sources */,
+				8CA921482ED9924800E4852B /* MainTabView.swift in Sources */,
 				D44055A09FD8EEE60C669B34 /* HaruDamApp.swift in Sources */,
 				D65943A189F394B25BDF11FD /* AppViewModel.swift in Sources */,
 				E20F8B21DD5188C6539045DE /* AuthService.swift in Sources */,
