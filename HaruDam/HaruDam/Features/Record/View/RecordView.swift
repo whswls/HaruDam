@@ -13,6 +13,8 @@ struct RecordView: View {
 
     // 나중에 SwiftData / ViewModel 연결하면 여기로 교체
     private let records: [EmotionRecord] = EmotionRecord.mockData
+    // TODO: ViewModel에서 이번 달 기록 일수 주입 예정
+    private let monthlyRecordedDays: Int = 24
 
     var body: some View {
         NavigationStack {
@@ -66,7 +68,7 @@ struct RecordView: View {
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(AppColor.textPrimary)
 
-                Text("24일 기록됨")
+                Text("\(monthlyRecordedDays)일 기록됨")
                     .font(.system(size: 13, weight: .regular))
                     .foregroundColor(AppColor.textSecondary)
             }
@@ -74,7 +76,7 @@ struct RecordView: View {
             Spacer()
 
             VStack(alignment: .trailing) {
-                Text("24")
+                Text("\(monthlyRecordedDays)")
                     .font(.system(size: 32, weight: .bold))
                     .foregroundColor(AppColor.primary)
 
