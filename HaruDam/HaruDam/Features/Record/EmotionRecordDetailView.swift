@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct EmotionRecordDetailView: View {
+    @Environment(\.dismiss) private var dismiss
 
     let record: EmotionRecord
     private var formatter: DateFormatter = .init()
@@ -54,6 +55,7 @@ struct EmotionRecordDetailView: View {
                         .font(.system(size: 15))
                         .foregroundColor(AppColor.textPrimary)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
 
                     Spacer()
                 }
@@ -64,6 +66,20 @@ struct EmotionRecordDetailView: View {
         }
         .navigationTitle("감정 기록")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 16, weight: .semibold))
+                    }
+                    .foregroundColor(AppColor.textPrimary)
+                }
+            }
+        }
     }
 }
 
