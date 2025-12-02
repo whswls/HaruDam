@@ -30,8 +30,9 @@ struct EmotionRecordDetailView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         HStack(spacing: 12) {
                             ZStack {
-                                RoundedRectangle(cornerRadius: 18)
-                                    .fill(Color.white)
+                                Circle()
+                                    .fill(AppColor.background)
+                                    .shadow(color: Color.black.opacity(0.03), radius: 8, x: 0, y: 4)
 
                                 Text(record.emoji)
                                     .font(.system(size: 32))

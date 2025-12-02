@@ -127,10 +127,10 @@ struct EmotionRecordRow: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
-
             ZStack {
-                RoundedRectangle(cornerRadius: 18)
-                    .fill(Color.white)
+                Circle()
+                    .fill(AppColor.background)
+                    .shadow(color: Color.black.opacity(0.03), radius: 8, x: 0, y: 4)
 
                 Text(record.emoji)
                     .font(.system(size: 28))
