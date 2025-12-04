@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     var nickname: String = "사용자"
+    @State private var isPresentingWriteView = false
     
     // TODO: 추후 ViewModel에서 관리
     private let recentEmotions: [EmotionRecord] = EmotionRecord.mockData
@@ -21,6 +22,9 @@ struct HomeView: View {
         ZStack {
             backgroundGradient
             scrollContent
+        }
+        .sheet(isPresented: $isPresentingWriteView) {
+            EmotionRecordWriteView()
         }
     }
     
@@ -52,8 +56,7 @@ struct HomeView: View {
     // MARK: - Actions
     
     private func handleTodayEmotionTap() {
-        // TODO: 오늘 감정 기록 화면으로 이동
-        
+        isPresentingWriteView = true
     }
 }
 
