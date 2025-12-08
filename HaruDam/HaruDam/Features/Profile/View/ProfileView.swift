@@ -100,7 +100,7 @@ struct ProfileView: View {
                 }
                 
                 // 로그아웃 버튼
-                LogoutButtonView()
+                ProfileLogoutButtonView()
                     .padding(.top, 8)
                 
                 // 하단 버전 정보
@@ -121,141 +121,9 @@ struct ProfileView: View {
     }
 }
 
-// MARK: - 알림 설정
-
-struct NotificationCardView: View {
-    @Binding var isOn: Bool
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            ZStack {
-                Circle()
-                    .fill(Color.blue.opacity(0.10))
-                    .frame(width: 36, height: 36)
-                
-                Image(systemName: "bell")
-                    .font(.system(size: 16))
-                    .foregroundColor(Color.blue)
-            }
-            
-            Text("알림 받기")
-                .font(.system(size: 16))
-            
-            Spacer()
-            
-            Toggle("", isOn: $isOn)
-                .labelsHidden()
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .background(
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.05), radius: 8, x: 0, y: 4)
-        )
-    }
-}
-
-// MARK: - 앱 설정
-
-struct SettingRowToggleView: View {
-    let iconSystemName: String
-    let iconBackground: Color
-    let title: String
-    @Binding var isOn: Bool
-    
-    var body: some View {
-        HStack(spacing: 12) {
-            ZStack {
-                Circle()
-                    .fill(iconBackground)
-                    .frame(width: 36, height: 36)
-                
-                Image(systemName: iconSystemName)
-                    .font(.system(size: 16))
-                    .foregroundColor(.primary)
-            }
-            
-            Text(title)
-                .font(.system(size: 16))
-            
-            Spacer()
-            
-            Toggle("", isOn: $isOn)
-                .labelsHidden()
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-    }
-}
-
-// MARK: - 설정 행 (네비게이션)
-
-struct SettingRowNavigationView: View {
-    let iconSystemName: String
-    let iconBackground: Color
-    let title: String
-    let action: () -> Void
-    
-    var body: some View {
-        Button {
-            action()
-        } label: {
-            HStack(spacing: 12) {
-                ZStack {
-                    Circle()
-                        .fill(iconBackground)
-                        .frame(width: 36, height: 36)
-                    
-                    Image(systemName: iconSystemName)
-                        .font(.system(size: 16))
-                        .foregroundColor(.primary)
-                }
-                
-                Text(title)
-                    .font(.system(size: 16))
-                
-                Spacer()
-                
-                Image(systemName: "chevron.right")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-            }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 14)
-        }
-        .buttonStyle(.plain)
-    }
-}
-
 // MARK: - 로그아웃 버튼
 
-struct LogoutButtonView: View {
-    var body: some View {
-        Button {
-            // 로그아웃 로직 연결 예정
-        } label: {
-            HStack(spacing: 8) {
-                Image(systemName: "arrow.right.square")
-                    .font(.system(size: 16, weight: .semibold))
-                
-                Text("로그아웃")
-                    .font(.system(size: 16, weight: .semibold))
-            }
-            .foregroundColor(Color.red.opacity(0.8))
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 14)
-            .background(
-                RoundedRectangle(cornerRadius: 18)
-                    .stroke(Color.red.opacity(0.4), lineWidth: 1)
-                    .background(
-                        RoundedRectangle(cornerRadius: 18)
-                            .fill(Color.red.opacity(0.04))
-                    )
-            )
-        }
-    }
-}
+
 
 #Preview {
     ProfileView()
