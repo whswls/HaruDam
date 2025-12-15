@@ -59,4 +59,19 @@ final class KeychainManager {
         
         return value
     }
+    
+    @discardableResult
+    func delete(for key: KeychainKey) -> Bool {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key.rawValue
+        ]
+        
+        let status = SecItemDelete(query as CFDictionary)
+        return status == errSecSuccess
+    }
+    
+    func clearAll() {
+        _ = delete(for: .userId)
+    }
 }
