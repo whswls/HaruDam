@@ -19,8 +19,22 @@ final class AuthStore: ObservableObject {
     
     init(client: SupabaseClient = SupabaseManager.shared.client) {
         self.client = client
+        authTask = Task {
+            await bootstrapSession()
+        }
     }
     
     var isLoggedIn: Bool { session != nil }
     var userId: String? { session?.user.id.uuidString }
+    
+    private func bootstrapSession() async {
+        do {
+            let session = try await client.auth.session
+            self.session = session
+        } catch {
+            self.session = nil
+        }
+
+        self.isBootstrapped = true
+    }
 }
