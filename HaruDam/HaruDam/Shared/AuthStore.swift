@@ -20,4 +20,7 @@ final class AuthStore: ObservableObject {
     init(client: SupabaseClient = SupabaseManager.shared.client) {
         self.client = client
     }
+    
+    var isLoggedIn: Bool { session != nil }
+    var userId: String? { session?.user.id.uuidString }
 }
