@@ -19,14 +19,21 @@ final class AuthStore: ObservableObject {
     
     init(client: SupabaseClient = SupabaseManager.shared.client) {
         self.client = client
+        
         authTask = Task {
             await bootstrapSession()
+            await listenAuthChanges()
         }
+    }
+    
+    deinit {
+        authTask?.cancel()
     }
     
     var isLoggedIn: Bool { session != nil }
     var userId: String? { session?.user.id.uuidString }
     
+    // 저장된 로그인 정보 확인
     private func bootstrapSession() async {
         do {
             let session = try await client.auth.session
@@ -36,5 +43,14 @@ final class AuthStore: ObservableObject {
         }
 
         self.isBootstrapped = true
+    }
+    
+    // 로그인 상태 변화 감시
+    private func listenAuthChanges() async {
+        await client.auth.onAuthStateChange { [weak self] _, session in
+            Task { @MainActor in
+                self?.session = session
+            }
+        }
     }
 }
