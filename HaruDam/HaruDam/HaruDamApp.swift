@@ -17,19 +17,13 @@ struct HaruDamApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Group {
-                if appViewModel.isLoggedIn {
-                    MainTabView()
-                } else {
-                    SplashView()
+            RootView()
+                .environmentObject(appViewModel)
+                .environment(\.managedObjectContext,
+                              persistentController.container.viewContext)
+                .onOpenURL { url in
+                    GIDSignIn.sharedInstance.handle(url)
                 }
-            }
-            .environmentObject(appViewModel)
-            .environment(\.managedObjectContext,
-                          persistentController.container.viewContext)
-            .onOpenURL { url in
-                GIDSignIn.sharedInstance.handle(url)
-            }
         }
         
     }
