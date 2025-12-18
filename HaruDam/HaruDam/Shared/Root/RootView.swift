@@ -6,4 +6,11 @@
 //  Copyright © 2025 kr.co.HaruDam. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+struct RootView: View {
+    
+    var body: some View {
+        
+    }
+}
