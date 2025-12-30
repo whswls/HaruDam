@@ -17,6 +17,16 @@ final class AuthStore: ObservableObject {
     private let client: SupabaseClient
     private var authTask: Task<Void, Never>?
     
+    var userName: String? {
+        guard let value = session?.user.userMetadata["name"] as? AnyJSON else { return nil }
+        
+        if case let .string(name) = value {
+            return name
+        }
+        
+        return nil
+    }
+    
     init(client: SupabaseClient = SupabaseManager.shared.client) {
         self.client = client
         
