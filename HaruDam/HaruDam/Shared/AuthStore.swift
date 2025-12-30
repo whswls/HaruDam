@@ -27,6 +27,10 @@ final class AuthStore: ObservableObject {
         return nil
     }
     
+    var displayUserName: String {
+        userName ?? "사용자"
+    }
+    
     init(client: SupabaseClient = SupabaseManager.shared.client) {
         self.client = client
         
