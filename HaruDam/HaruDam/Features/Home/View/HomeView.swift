@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var nickname: String = "사용자"
     @State private var isPresentingWriteView = false
     
     // TODO: 추후 ViewModel에서 관리
@@ -42,7 +41,7 @@ struct HomeView: View {
     private var scrollContent: some View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 24) {
-                HeaderSection(nickname: nickname)
+                HeaderSection()
                 TodayEmotionCardView(onTap: handleTodayEmotionTap)
                 WeeklyFlowSection(values: weeklyEmotions)
                 RecentEmotionSection(emotions: recentEmotions)
@@ -63,7 +62,8 @@ struct HomeView: View {
 // MARK: - Header Section
 
 struct HeaderSection: View {
-    let nickname: String
+    
+    @EnvironmentObject private var authStore: AuthStore
     
     private var formattedToday: String {
         let formatter = DateFormatter()
@@ -74,7 +74,7 @@ struct HeaderSection: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("안녕하세요 \(nickname)님")
+            Text("안녕하세요 \(authStore.displayUserName)님")
                 .font(.system(size: 28, weight: .bold))
             
             Text(formattedToday)

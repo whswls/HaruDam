@@ -104,6 +104,7 @@
 		8CA9213E2ED87CAD00E4852B /* Sections */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sections; sourceTree = "<group>"; };
 		8CA9214D2ED993D600E4852B /* Record */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Record; sourceTree = "<group>"; };
 		8CA9214F2ED993EA00E4852B /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
+		8CA921932EEAFBEC00E4852B /* Shared */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Shared; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +298,7 @@
 		CF9730CA0643A7DF2336B557 /* HaruDam */ = {
 			isa = PBXGroup;
 			children = (
+				8CA921932EEAFBEC00E4852B /* Shared */,
 				8CE3F7E89F3EB36430039FFE /* Components */,
 				F06AF7C47EBE114236F0DA7E /* Config */,
 				CF68A177CAAFED0DB2034F0A /* CoreData */,
@@ -385,6 +387,7 @@
 				8CA9213E2ED87CAD00E4852B /* Sections */,
 				8CA9214D2ED993D600E4852B /* Record */,
 				8CA9214F2ED993EA00E4852B /* Profile */,
+				8CA921932EEAFBEC00E4852B /* Shared */,
 			);
 			name = HaruDam;
 			packageProductDependencies = (

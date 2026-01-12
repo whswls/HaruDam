@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct ProfileHeaderCardView: View {
-    // TODO: 나중에 ViewModel에서 주입
-    let nickname: String = "감정 기록자"
+    
+    @EnvironmentObject private var authStore: AuthStore
+    
     let email: String = "user@example.com"
     
     let totalRecords: Int = 45
@@ -34,10 +35,10 @@ struct ProfileHeaderCardView: View {
                 }
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(nickname)
+                    Text(authStore.displayUserName)
                         .font(.headline)
                     
-                    Text(email)
+                    Text(authStore.displayEmail)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
