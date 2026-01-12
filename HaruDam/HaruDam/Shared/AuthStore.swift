@@ -27,8 +27,16 @@ final class AuthStore: ObservableObject {
         return nil
     }
     
+    var email: String? {
+        session?.user.email
+    }
+    
     var displayUserName: String {
         userName ?? "사용자"
+    }
+    
+    var displayEmail: String {
+        email ?? ""
     }
     
     init(client: SupabaseClient = SupabaseManager.shared.client) {

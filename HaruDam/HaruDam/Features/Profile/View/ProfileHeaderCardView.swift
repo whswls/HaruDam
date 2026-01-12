@@ -38,7 +38,7 @@ struct ProfileHeaderCardView: View {
                     Text(authStore.displayUserName)
                         .font(.headline)
                     
-                    Text(email)
+                    Text(authStore.displayEmail)
                         .font(.caption)
                         .foregroundColor(.secondary)
                 }
