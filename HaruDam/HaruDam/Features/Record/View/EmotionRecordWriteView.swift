@@ -7,15 +7,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct EmotionRecordWriteView: View {
 
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.presentationMode) private var presentationMode
+    @Environment(\.managedObjectContext) private var context
 
     @State private var selectedEmoji: String = "😌"
     @State private var title: String = ""
     @State private var date: Date = Date()
     @State private var content: String = ""
+    @State private var tags: [String] = []
 
     /// 저장 버튼 눌렀을 때 상위에서 처리할 수 있도록 콜백
     var onSave: ((String, String, Date, String) -> Void)?
@@ -197,8 +201,37 @@ struct EmotionRecordWriteView: View {
     // MARK: - 저장
     private func handleSave() {
         guard canSave else { return }
-        onSave?(selectedEmoji, title, date, content)
-        dismiss()
+
+        // CoreData(NSManagedObject) 엔티티에 저장
+        let newRecord = EmotionRecordEntity(context: context)
+        newRecord.id = UUID()
+        newRecord.title = title
+        newRecord.emotion = selectedEmoji
+        newRecord.content = content
+        newRecord.createdAt = date
+        newRecord.updatedAt = Date()
+
+        // Supabase 동기화용
+        newRecord.syncStatus = "pending"
+        newRecord.serverId = nil
+
+        let tagsJson: String
+        do {
+            let data = try JSONEncoder().encode(tags)
+            tagsJson = String(data: data, encoding: .utf8) ?? "[]"
+        } catch {
+            tagsJson = "[]"
+        }
+        newRecord.tags = tagsJson
+
+        do {
+            try context.save()
+            //onSave?(selectedEmoji, title, date, content)
+            presentationMode.wrappedValue.dismiss()
+        } catch {
+            context.rollback()
+            print("Failed to save EmotionRecordEntity:", error)
+        }
     }
 }
 

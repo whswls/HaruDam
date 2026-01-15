@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:EmotionRecordEntity+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:EmotionRecordEntity+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:HaruDam.xcodeproj">
    </FileRef>
 </Workspace>
