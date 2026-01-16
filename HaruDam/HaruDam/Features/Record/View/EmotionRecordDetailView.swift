@@ -66,7 +66,12 @@ struct EmotionRecordDetailView: View {
         }
         .navigationTitle("감정 기록")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                NavigationLink {
+                    EmotionRecordEditView(record: record)
+                } label: {
+                    Image(systemName: "pencil")
+                }
                 Button(role: .destructive) {
                     isDeleteAlertPresented = true
                 } label: {
