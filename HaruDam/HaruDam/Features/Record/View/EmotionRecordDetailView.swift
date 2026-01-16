@@ -12,6 +12,7 @@ import CoreData
 struct EmotionRecordDetailView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.managedObjectContext) private var context
+    @State private var isDeleteAlertPresented: Bool = false
     
     let record: EmotionRecordEntity
     var formatter: DateFormatter = {
@@ -66,12 +67,20 @@ struct EmotionRecordDetailView: View {
         .navigationTitle("감정 기록")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button(role: .destructive){
-                    deleteRecord()
+                Button(role: .destructive) {
+                    isDeleteAlertPresented = true
                 } label: {
                     Image(systemName: "trash")
                 }
             }
+        }
+        .alert("감정 기록 삭제", isPresented: $isDeleteAlertPresented) {
+            Button("삭제", role: .destructive) {
+                deleteRecord()
+            }
+            Button("취소", role: .cancel) {}
+        } message: {
+            Text("이 감정 기록을 정말 삭제할까요? 삭제하면 되돌릴 수 없어요.")
         }
         .navigationBarTitleDisplayMode(.inline)
     }
