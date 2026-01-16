@@ -11,57 +11,58 @@ import CoreData
 
 struct EmotionRecordDetailView: View {
     @Environment(\.dismiss) private var dismiss
-    @FetchRequest(
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \EmotionRecordEntity.createdAt, ascending: false)
-        ],
-        animation: .default
-    )
-    private var records: FetchedResults<EmotionRecordEntity>
-    private var formatter: DateFormatter = .init()
-    
-    //    init(record: EmotionRecord) {
-    //        formatter.locale = Locale(identifier: "ko_KR")
-    //        formatter.dateFormat = "yyyy년 M월 d일 · EEEE"
-    //    }
+    let record: EmotionRecordEntity
+    var formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: "ko_KR")
+        f.dateFormat = "yyyy년 M월 d일 · EEEE"
+        return f
+    }()
     
     var body: some View {
         ZStack {
             AppColor.background.ignoresSafeArea()
-            
-            List {
-                if records.isEmpty {
-                    Text("아직 감정 기록이 없어요.")
-                        .foregroundColor(.secondary)
-                } else {
-                    ForEach(records) { record in
+
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack(alignment: .top, spacing: 12) {
+                        Text(record.emotion ?? "🙂")
+                            .font(.system(size: 44))
+
                         VStack(alignment: .leading, spacing: 6) {
-                            HStack(spacing: 8) {
-                                Text(record.emotion ?? "🙂")
-                                    .font(.system(size: 24))
-                                
-                                Text(record.title ?? "")
-                                    .font(.system(size: 16, weight: .semibold))
-                            }
-                            
-                            Text(record.content ?? "")
-                                .font(.system(size: 14))
-                                .foregroundColor(.secondary)
-                                .lineLimit(2)
-                            
-                            Text(
-                                (record.createdAt ?? Date())
-                                    .formatted(date: .abbreviated, time: .omitted)
-                            )
-                            .font(.caption)
-                            .foregroundColor(.secondary)
+                            Text(record.title ?? "")
+                                .font(.system(size: 22, weight: .semibold))
+                                .foregroundColor(AppColor.textPrimary)
+
+                            Text(formatter.string(from: record.createdAt ?? Date()))
+                                .font(.system(size: 12))
+                                .foregroundColor(AppColor.textSecondary)
                         }
-                        .padding(.vertical, 6)
+
+                        Spacer()
                     }
+
+                    Divider()
+
+                    Text(record.content ?? "")
+                        .font(.system(size: 16))
+                        .foregroundColor(AppColor.textPrimary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .lineSpacing(4)
+
+                    Spacer(minLength: 0)
                 }
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white)
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
             }
-            .navigationTitle("감정 기록")
         }
+        .navigationTitle("감정 기록")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

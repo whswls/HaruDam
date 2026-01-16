@@ -118,7 +118,7 @@ struct RecordView: View {
         VStack(spacing: 14) {
             ForEach(records) { record in
                 NavigationLink {
-                    EmotionRecordDetailView()
+                    EmotionRecordDetailView(record: record)
                 } label: {
                     EmotionRecordRow(record: record)
                 }
