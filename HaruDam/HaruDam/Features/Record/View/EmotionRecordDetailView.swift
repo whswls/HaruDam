@@ -11,6 +11,8 @@ import CoreData
 
 struct EmotionRecordDetailView: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.managedObjectContext) private var context
+    
     let record: EmotionRecordEntity
     var formatter: DateFormatter = {
         let f = DateFormatter()
@@ -62,7 +64,27 @@ struct EmotionRecordDetailView: View {
             }
         }
         .navigationTitle("감정 기록")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(role: .destructive){
+                    deleteRecord()
+                } label: {
+                    Image(systemName: "trash")
+                }
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func deleteRecord() {
+        context.delete(record)
+        do {
+            try context.save()
+            dismiss()
+        } catch {
+            context.rollback()
+            print("Failed to delete record: \(error)")
+        }
     }
 }
 
