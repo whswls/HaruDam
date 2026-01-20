@@ -13,30 +13,23 @@ struct EmotionRecordEditView: View {
     @Environment(\.managedObjectContext) private var context
     @Environment(\.dismiss) private var dismiss
     
-    let record: EmotionRecordEntity
-    
-    @State private var title: String
-    @State private var content: String
-    @State private var emotion: String
+    @StateObject private var viewModel: EmotionRecordEditViewModel
     
     init(record: EmotionRecordEntity) {
-        self.record = record
-        _title = State(initialValue: record.title ?? "")
-        _content = State(initialValue: record.content ?? "")
-        _emotion = State(initialValue: record.emotion ?? "🙂")
+        _viewModel = StateObject(wrappedValue: EmotionRecordEditViewModel(record: record))
     }
     
     var body: some View {
         VStack(spacing: 16) {
             // 감정(이모지) — 지금은 Text로, 나중에 Picker로 확장 가능
-            TextField("감정", text: $emotion)
+            TextField("감정", text: $viewModel.emotion)
                 .font(.system(size: 32))
                 .multilineTextAlignment(.center)
             
-            TextField("제목", text: $title)
+            TextField("제목", text: $viewModel.title)
                 .textFieldStyle(.roundedBorder)
             
-            TextEditor(text: $content)
+            TextEditor(text: $viewModel.content)
                 .frame(minHeight: 200)
                 .overlay(
                     RoundedRectangle(cornerRadius: 8)
@@ -51,25 +44,15 @@ struct EmotionRecordEditView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("완료") {
-                    updateRecord()
+                    Task {
+                        await viewModel.save(context: context)
+                        if viewModel.errorMessage == nil {
+                            dismiss()
+                        }
+                    }
                 }
-                .disabled(title.isEmpty || content.isEmpty)
+                .disabled(!viewModel.canSave || viewModel.isSyncing)
             }
-        }
-    }
-    
-    private func updateRecord() {
-        record.title = title
-        record.content = content
-        record.emotion = emotion
-        record.updatedAt = Date()
-        
-        do {
-            try context.save()
-            dismiss()
-        } catch {
-            context.rollback()
-            print("Failed to update record:", error)
         }
     }
 }
