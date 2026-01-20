@@ -20,6 +20,7 @@
 		496DE70D988754C028EC2CCB /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 48F89E3F86C3C0C43417D9D7 /* GoogleSignIn */; };
 		4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E73DABA943C5E66C7F4D34B /* SignUpView.swift */; };
 		5A783CAC8E3AA76485DC97D2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9F21F42E0199535EAA24D614 /* Roboto-Medium.ttf */; };
+		8C7FCBFC2F1F476300ABD93E /* EmotionRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FCBFB2F1F476300ABD93E /* EmotionRecordService.swift */; };
 		8C9EAEEB2F18D331000BCFF1 /* EmotionRecordEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9EAEEA2F18D331000BCFF1 /* EmotionRecordEntity+CoreDataProperties.swift */; };
 		8C9EAEF52F18D344000BCFF1 /* EmotionRecordEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C9EAEF42F18D344000BCFF1 /* EmotionRecordEntity+CoreDataClass.swift */; };
 		8C9EAF232F18D976000BCFF1 /* HaruDamModel.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 8C9EAF222F18D976000BCFF1 /* HaruDamModel.xcdatamodel */; };
@@ -87,6 +88,7 @@
 		7D6C8A7FD3AC9046A2CFD2D9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		7FF8E78649C6CB1BA22347BB /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		8337EA76B51F130D5915F74C /* RippleCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleCircle.swift; sourceTree = "<group>"; };
+		8C7FCBFB2F1F476300ABD93E /* EmotionRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRecordService.swift; sourceTree = "<group>"; };
 		8C9EAEEA2F18D331000BCFF1 /* EmotionRecordEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmotionRecordEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		8C9EAEF42F18D344000BCFF1 /* EmotionRecordEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmotionRecordEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8C9EAF222F18D976000BCFF1 /* HaruDamModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HaruDamModel.xcdatamodel; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				B5C6ADB2CD02D28F4E01A39E /* AuthService.swift */,
+				8C7FCBFB2F1F476300ABD93E /* EmotionRecordService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				4CD91C4B89A277C782E22470 /* SignUpView.swift in Sources */,
 				8CA921522ED996E000E4852B /* EmotionRecord.swift in Sources */,
 				E6AEF0F27E3968CC78E50B0F /* SignUpViewModel.swift in Sources */,
+				8C7FCBFC2F1F476300ABD93E /* EmotionRecordService.swift in Sources */,
 				0D6FC1EB9FC12129088BC83A /* RippleCircle.swift in Sources */,
 				2C566A55581FE12C43267D83 /* SplashView.swift in Sources */,
 				8CA921482ED9924800E4852B /* MainTabView.swift in Sources */,

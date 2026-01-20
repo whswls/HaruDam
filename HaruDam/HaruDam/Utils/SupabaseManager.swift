@@ -28,7 +28,15 @@ final class SupabaseManager {
 
         self.supabaseURL = url
         self.supabaseKey = key
-        self.client = SupabaseClient(supabaseURL: url, supabaseKey: key)
+        self.client = SupabaseClient(
+            supabaseURL: url,
+            supabaseKey: key,
+            options: SupabaseClientOptions(
+                auth: .init(
+                    emitLocalSessionAsInitialSession: true
+                )
+            )
+        )
     }
     
     // MARK: - Auth Redirect
