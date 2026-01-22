@@ -14,7 +14,6 @@ final class EmotionRecordWriteViewModel: ObservableObject {
     @Published var emotion: String = "☺️"
     @Published var title: String = ""
     @Published var content: String = ""
-    @Published var date: Date = Date()
     @Published var tags: [String] = []
     
     // UI 상태
@@ -22,7 +21,8 @@ final class EmotionRecordWriteViewModel: ObservableObject {
     @Published var errorMessage: String? = nil
     
     var canSave: Bool {
-        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty &&
+        !content.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
     func save(context: NSManagedObjectContext) async {
@@ -35,7 +35,7 @@ final class EmotionRecordWriteViewModel: ObservableObject {
         record.emotion = emotion
         record.title = title
         record.content = content
-        record.createdAt = date
+        record.createdAt = Date()
         record.updatedAt = Date()
         record.serverId = nil
         record.syncStatus = SyncStatus.pending.rawValue

@@ -28,7 +28,6 @@ struct EmotionRecordWriteView: View {
                         
                         headerSection
                         emojiSection
-                        dateSection
                         titleSection
                         contentSection
                         
@@ -122,22 +121,6 @@ struct EmotionRecordWriteView: View {
                     }
                 }
             }
-        }
-    }
-    
-    private var dateSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text("날짜")
-                .font(.system(size: 15, weight: .semibold))
-                .foregroundColor(AppColor.textPrimary)
-            
-            DatePicker(
-                "",
-                selection: $viewModel.date,
-                displayedComponents: .date
-            )
-            .labelsHidden()
-            .tint(AppColor.primary)
         }
     }
     
