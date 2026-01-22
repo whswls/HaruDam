@@ -14,6 +14,8 @@ struct EmotionRecordDetailView: View {
     @Environment(\.managedObjectContext) private var context
     @State private var isDeleteAlertPresented: Bool = false
     
+    @StateObject private var viewModel: EmotionRecordEditViewModel
+    
     let record: EmotionRecordEntity
     var formatter: DateFormatter = {
         let f = DateFormatter()
@@ -21,6 +23,11 @@ struct EmotionRecordDetailView: View {
         f.dateFormat = "yyyy년 M월 d일 · EEEE"
         return f
     }()
+    
+    init(record: EmotionRecordEntity) {
+        self.record = record
+        _viewModel = StateObject(wrappedValue: EmotionRecordEditViewModel(record: record))
+    }
     
     var body: some View {
         ZStack {
@@ -81,24 +88,16 @@ struct EmotionRecordDetailView: View {
         }
         .alert("감정 기록 삭제", isPresented: $isDeleteAlertPresented) {
             Button("삭제", role: .destructive) {
-                deleteRecord()
+                Task {
+                    await viewModel.delete(context: context)
+                    dismiss()
+                }
             }
             Button("취소", role: .cancel) {}
         } message: {
             Text("이 감정 기록을 정말 삭제할까요? 삭제하면 되돌릴 수 없어요.")
         }
         .navigationBarTitleDisplayMode(.inline)
-    }
-    
-    private func deleteRecord() {
-        context.delete(record)
-        do {
-            try context.save()
-            dismiss()
-        } catch {
-            context.rollback()
-            print("Failed to delete record: \(error)")
-        }
     }
 }
 
