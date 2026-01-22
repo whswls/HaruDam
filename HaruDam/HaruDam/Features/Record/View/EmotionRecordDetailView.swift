@@ -7,83 +7,99 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct EmotionRecordDetailView: View {
     @Environment(\.dismiss) private var dismiss
-
-    let record: EmotionRecord
-    private var formatter: DateFormatter = .init()
-
-    init(record: EmotionRecord) {
+    @Environment(\.managedObjectContext) private var context
+    @State private var isDeleteAlertPresented: Bool = false
+    
+    @StateObject private var viewModel: EmotionRecordEditViewModel
+    
+    let record: EmotionRecordEntity
+    var formatter: DateFormatter = {
+        let f = DateFormatter()
+        f.locale = Locale(identifier: "ko_KR")
+        f.dateFormat = "yyyy년 M월 d일 · EEEE"
+        return f
+    }()
+    
+    init(record: EmotionRecordEntity) {
         self.record = record
-        formatter.locale = Locale(identifier: "ko_KR")
-        formatter.dateFormat = "yyyy년 M월 d일 · EEEE"
+        _viewModel = StateObject(wrappedValue: EmotionRecordEditViewModel(record: record))
     }
-
+    
     var body: some View {
         ZStack {
             AppColor.background.ignoresSafeArea()
 
-            ScrollView(showsIndicators: false) {
-                VStack(alignment: .leading, spacing: 20) {
-                    // 제목 및 날짜
-                    VStack(alignment: .leading, spacing: 8) {
-                        HStack(spacing: 12) {
-                            ZStack {
-                                Circle()
-                                    .fill(AppColor.background)
-                                    .shadow(color: Color.black.opacity(0.03), radius: 8, x: 0, y: 4)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 16) {
+                    HStack(alignment: .top, spacing: 12) {
+                        Text(record.emotion ?? "🙂")
+                            .font(.system(size: 44))
 
-                                Text(record.emoji)
-                                    .font(.system(size: 32))
-                            }
-                            .frame(width: 64, height: 64)
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(record.title ?? "")
+                                .font(.system(size: 22, weight: .semibold))
+                                .foregroundColor(AppColor.textPrimary)
 
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(record.title)
-                                    .font(.system(size: 22, weight: .bold))
-                                    .foregroundColor(AppColor.textPrimary)
-
-                                Text(formatter.string(from: record.date))
-                                    .font(.system(size: 13))
-                                    .foregroundColor(AppColor.textSecondary)
-                            }
+                            Text(formatter.string(from: record.createdAt ?? Date()))
+                                .font(.system(size: 12))
+                                .foregroundColor(AppColor.textSecondary)
                         }
+
+                        Spacer()
                     }
 
-                    // 내용
-                    Text(record.description)
-                        .font(.system(size: 15))
+                    Divider()
+
+                    Text(record.content ?? "")
+                        .font(.system(size: 16))
                         .foregroundColor(AppColor.textPrimary)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.leading, 10)
+                        .lineSpacing(4)
 
-                    Spacer()
+                    Spacer(minLength: 0)
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 24)
-                .padding(.bottom, 32)
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(Color.white)
+                )
+                .padding(.horizontal, 16)
+                .padding(.top, 16)
             }
         }
         .navigationTitle("감정 기록")
-        .navigationBarTitleDisplayMode(.inline)
-        .navigationBarBackButtonHidden(true)
         .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button(action: {
-                    dismiss()
-                }) {
-                    HStack(spacing: 4) {
-                        Image(systemName: "chevron.left")
-                            .font(.system(size: 16, weight: .semibold))
-                    }
-                    .foregroundColor(AppColor.textPrimary)
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                NavigationLink {
+                    EmotionRecordEditView(record: record)
+                } label: {
+                    Image(systemName: "pencil")
+                }
+                Button(role: .destructive) {
+                    isDeleteAlertPresented = true
+                } label: {
+                    Image(systemName: "trash")
                 }
             }
         }
+        .alert("감정 기록 삭제", isPresented: $isDeleteAlertPresented) {
+            Button("삭제", role: .destructive) {
+                Task {
+                    await viewModel.delete(context: context)
+                    dismiss()
+                }
+            }
+            Button("취소", role: .cancel) {}
+        } message: {
+            Text("이 감정 기록을 정말 삭제할까요? 삭제하면 되돌릴 수 없어요.")
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#Preview {
-    EmotionRecordDetailView(record: EmotionRecord.mockData.first!)
-}
+// MARK: - CoreData
+extension EmotionRecordEntity: Identifiable {}

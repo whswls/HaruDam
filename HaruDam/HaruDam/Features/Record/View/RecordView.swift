@@ -7,14 +7,30 @@
 //
 
 import SwiftUI
+import CoreData
 
 // MARK: - View
 struct RecordView: View {
 
-    // 나중에 SwiftData / ViewModel 연결하면 여기로 교체
-    private let records: [EmotionRecord] = EmotionRecord.mockData
-    // TODO: ViewModel에서 이번 달 기록 일수 주입 예정
-    private let monthlyRecordedDays: Int = 24
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionRecordEntity.createdAt, ascending: false)],
+        animation: .default
+    )
+    private var records: FetchedResults<EmotionRecordEntity>
+
+    private var monthlyRecordedDays: Int {
+        let calendar = Calendar.current
+        let now = Date()
+        guard let monthInterval = calendar.dateInterval(of: .month, for: now) else { return 0 }
+
+        // 이번 달에 기록된 날짜(일) 단위로 중복 제거
+        let days = records
+            .compactMap { $0.createdAt }
+            .filter { monthInterval.contains($0) }
+            .map { calendar.startOfDay(for: $0) }
+
+        return Set(days).count
+    }
 
     var body: some View {
         NavigationStack {
@@ -116,10 +132,10 @@ struct RecordView: View {
 
 struct EmotionRecordRow: View {
 
-    let record: EmotionRecord
+    let record: EmotionRecordEntity
     private var formatter: DateFormatter = .init()
     
-    init(record: EmotionRecord) {
+    init(record: EmotionRecordEntity) {
             self.record = record
             formatter.locale = Locale(identifier: "ko_KR")
             formatter.dateFormat = "yyyy년 M월 d일 · EEEE"
@@ -132,21 +148,21 @@ struct EmotionRecordRow: View {
                     .fill(AppColor.background)
                     .shadow(color: Color.black.opacity(0.03), radius: 8, x: 0, y: 4)
 
-                Text(record.emoji)
+                Text(record.emotion ?? "🙂")
                     .font(.system(size: 28))
             }
             .frame(width: 56, height: 56)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(record.title)
+                Text(record.title ?? "")
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundColor(AppColor.textPrimary)
 
-                Text(formatter.string(from: record.date))
+                Text(formatter.string(from: record.createdAt ?? Date()))
                     .font(.system(size: 12))
                     .foregroundColor(AppColor.textSecondary)
 
-                Text(record.description)
+                Text(record.content ?? "")
                     .font(.system(size: 13))
                     .foregroundColor(AppColor.textSecondary)
                     .lineLimit(2)

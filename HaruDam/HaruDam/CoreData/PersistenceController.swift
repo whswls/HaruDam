@@ -14,13 +14,10 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
         let context = controller.container.viewContext
-        
-        // 더미 데이터
-        let sample = UserProfile(context: context)
-        sample.email = "preview@example.com"
-        sample.nickname = "프리뷰유저"
-        sample.createdAt = Date()
-        
+
+        // 더미 데이터는 엔티티 이름 변경/삭제 시 컴파일 에러가 날 수 있어,
+        // Preview 스토어는 기본 컨텍스트만 초기화합니다.
+
         do {
             try context.save()
         } catch {
