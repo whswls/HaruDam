@@ -10,7 +10,8 @@ import Foundation
 import Supabase
 import CoreData
 
-final class EmotionRecordService {
+final class EmotionRecordService: EmotionRecordRepository {
+    
     static let shared = EmotionRecordService()
     private let supabase: SupabaseManager
 
@@ -51,6 +52,22 @@ final class EmotionRecordService {
         f.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
         return f
     }()
+    
+    func fetchRemoteRecords(from start: Date, to end: Date) async throws -> [RemoteEmotionRecord] {
+        let startISO = isoFormatter.string(from: start)
+        let endISO = isoFormatter.string(from: end)
+
+        let rows: [RemoteEmotionRecord] = try await supabase.client
+            .from("emotion_records")
+            .select("id, user_id, emotion, title, content, tags, created_at, updated_at")
+            .gte("created_at", value: startISO)
+            .lt("created_at", value: endISO)
+            .order("created_at", ascending: true)
+            .execute()
+            .value
+
+        return rows
+    }
 
     /// Supabase - insert 생성된 서버 id(uuid)를 반환
     /// - Note: 테이블명은 `emotion_records`사용
@@ -120,5 +137,16 @@ final class EmotionRecordService {
     func delete(record: EmotionRecordEntity) async throws {
         guard let serverId = record.serverId, !serverId.isEmpty else { return }
         try await delete(recordId: serverId)
+    }
+    
+    func fetchRecentRemoteRecords(limit: Int) async throws -> [RemoteEmotionRecord] {
+        let rows: [RemoteEmotionRecord] = try await supabase.client
+            .from("emotion_records")
+            .select("id, user_id, emotion, title, content, tags, created_at, updated_at")
+            .order("created_at", ascending: false)
+            .limit(limit)
+            .execute()
+            .value
+        return rows
     }
 }

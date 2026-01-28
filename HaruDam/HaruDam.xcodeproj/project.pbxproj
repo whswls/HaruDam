@@ -107,6 +107,9 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		8C7D61D52F23410D007349CE /* ViewModel */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ViewModel; sourceTree = "<group>"; };
+		8C7D61D62F23413A007349CE /* Model */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Model; sourceTree = "<group>"; };
+		8C7D61DB2F24E1FB007349CE /* Repository */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Repository; sourceTree = "<group>"; };
 		8CA9213E2ED87CAD00E4852B /* Sections */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Sections; sourceTree = "<group>"; };
 		8CA9214D2ED993D600E4852B /* Record */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Record; sourceTree = "<group>"; };
 		8CA9214F2ED993EA00E4852B /* Profile */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Profile; sourceTree = "<group>"; };
@@ -278,7 +281,9 @@
 		BD0FFFD04D9C9AE769F30E88 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8C7D61D62F23413A007349CE /* Model */,
 				ED413DC81DC53E4028194922 /* View */,
+				8C7D61D52F23410D007349CE /* ViewModel */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -307,6 +312,7 @@
 		CF9730CA0643A7DF2336B557 /* HaruDam */ = {
 			isa = PBXGroup;
 			children = (
+				8C7D61DB2F24E1FB007349CE /* Repository */,
 				8CA921932EEAFBEC00E4852B /* Shared */,
 				8CE3F7E89F3EB36430039FFE /* Components */,
 				F06AF7C47EBE114236F0DA7E /* Config */,
@@ -393,6 +399,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				8C7D61D52F23410D007349CE /* ViewModel */,
+				8C7D61D62F23413A007349CE /* Model */,
+				8C7D61DB2F24E1FB007349CE /* Repository */,
 				8CA9213E2ED87CAD00E4852B /* Sections */,
 				8CA9214D2ED993D600E4852B /* Record */,
 				8CA9214F2ED993EA00E4852B /* Profile */,
