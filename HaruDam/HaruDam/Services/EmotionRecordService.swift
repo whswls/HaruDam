@@ -138,4 +138,15 @@ final class EmotionRecordService: EmotionRecordRepository {
         guard let serverId = record.serverId, !serverId.isEmpty else { return }
         try await delete(recordId: serverId)
     }
+    
+    func fetchRecentRemoteRecords(limit: Int) async throws -> [RemoteEmotionRecord] {
+        let rows: [RemoteEmotionRecord] = try await supabase.client
+            .from("emotion_records")
+            .select("id, user_id, emotion, title, content, tags, created_at, updated_at")
+            .order("created_at", ascending: false)
+            .limit(limit)
+            .execute()
+            .value
+        return rows
+    }
 }

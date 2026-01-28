@@ -23,4 +23,6 @@ protocol EmotionRecordRepository {
     // Supabase - delete
     func delete(recordId: String) async throws
     func delete(record: EmotionRecordEntity) async throws
+    
+    func fetchRecentRemoteRecords(limit: Int) async throws -> [RemoteEmotionRecord]
 }
