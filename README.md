@@ -76,7 +76,6 @@ HaruDam/
 ```
 
 ## 🧰 실행방법
-- Tuist
 ```text
 # 1) Tuist 설치 (미설치 시)
 brew install tuist
