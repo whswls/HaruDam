@@ -21,13 +21,12 @@
 
 ## 🛠️ 기술 스택
 ### 핵심 기술
-- Swift
 - SwiftUI
 - iOS 15.0+
 ### 아키텍처 & 디자인 패턴
-- Clean Architecture
-- MVVM
-
+- **MVVM** 
+- **계층형 아키텍처** - Domain, Repository, Presentation 계층 분리
+- **기능 기반 모듈화** - Feature 단위로 코드 구성
 ### 개발 도구
 - **Tuist** - 모듈화된 프로젝트 구조 관리 및 의존성 관리
 - Xcode
